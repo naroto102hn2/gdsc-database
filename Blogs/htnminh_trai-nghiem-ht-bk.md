@@ -1,5 +1,5 @@
-Giấc mơ đẹp chiều thu và cơn ác mộng dai dẳng
----------------------------------------------
+<h1 id="title">Giấc mơ đẹp chiều thu và cơn ác mộng dai dẳng</h2>
+
 Chẳng ai học ở Trường Đại học Bách Khoa Hà Nội mà chưa nghe qua về truyền thuyết làm chủ một môn học nào đó trong một đêm. Tôi cũng là một phần của truyền thuyết này.
 
 Câu chuyện thì phải có đầu có đuôi. Số là năm ngoái, một hôm nào đó vào tầm 5 giờ chiều, tôi vẫn còn đang ngồi chơi điện tử (như mọi hôm), bỗng nghe bố mẹ bảo vừa đủ điểm đậu vào cái ngành nào đó mang tên cũng ngầu ngầu là Khoa học dữ liệu và Trí tuệ nhân tạo.
