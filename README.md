@@ -20,6 +20,8 @@ Mỗi bạn ÍT NHẤT 1 bài viết. Nộp vào folder [Blogs](./Blogs). Với 
 
 ### 👉 Data Format:
 
+**Các bạn dùng IDE của IntelliJ như IDEA, WebStorm rồi paste HTML vào JSON, vì JSON ko cho phép multi-line**
+
 Demo json [hieu-ve-co-che-bat-dong-bo-asynchronous-javascript.json](./Blogs/hieu-ve-co-che-bat-dong-bo-asynchronous-javascript.json)
 
 ```json
