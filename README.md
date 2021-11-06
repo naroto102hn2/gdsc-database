@@ -1,4 +1,6 @@
-# Tạo data cho GDSCxHUST database
+# Tạo data cho GDSCxHUST database\
+
+Tu Bui very handsome
 
 ## 🙆‍♂️ Overview
 
