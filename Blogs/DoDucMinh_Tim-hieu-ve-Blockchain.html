@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div >
+    <h1>
+      Tìm hiểu về Blockchain
+    </h1>
+    <h2>
+      Công nghệ Blockchain xuất hiện đã mở ra một xu hướng mới cho các lĩnh vực như: tài chính ngân hàng, logistics, điện tử viễn thông, kế toán kiểm toán,... Vậy blockchain là gì? Có thể làm được những gì?
+    </h2>
+    <div class="clrindexknh">
+      <div id="QuickViewId" class="bxindexknh">
+        <p class="indxtitle" onclick="togidxknh()">
+          Xem nhanh <i class="faq-idxknh"></i>
+        </p>
+        <div class="ctindxknh">
+          <h5 class="">
+            <a href="#hmenuid1" data-id="hmenuid1" onclick="autoCloseMenu(this, event)">1. Blockchain là gì? (khái niệm,
+              phân loại, phiên bản mới
+              nhất)</a>
+          </h5>
+          <div class="subh"></div>
+          <h5 class="">
+            <a href="#hmenuid2" data-id="hmenuid2" onclick="autoCloseMenu(this, event)">2. Các đặc điểm nổi bật của
+              Blockchain</a>
+          </h5>
+          <div class="subh"></div>
+          <h5 class="">
+            <a href="#hmenuid3" data-id="hmenuid3" onclick="autoCloseMenu(this, event)">3. Blockchain hoạt động như thế
+              nào</a>
+          </h5>
+          <div class="subh"></div>
+          <h5 class="">
+            <a href="#hmenuid4" data-id="hmenuid4" onclick="autoCloseMenu(this, event)">4. Ứng dụng thực tiễn của công
+              nghệ Blockchain trong cuộc
+              sống</a>
+          </h5>
+          <div class="subh"></div>
+          
+        </div>
+      </div>
+    </div>
+
+    <h3 id="hmenuid1">
+      Blockchain là gì? (khái niệm, phân loại, phiên bản mới nhất)
+    </h3>
+
+    <p><strong>Khái niệm</strong></p>
+
+    <p>
+      Blockchain là công nghệ chuỗi – khối, cho phép
+      <strong>truyền tải dữ liệu</strong> một cách an toàn dựa trên hệ thống
+      <strong>mã hóa</strong> vô cùng phức tạp, tương tự như cuốn sổ cái kế
+      toán của một công ty, nơi mà tiền được giám sát chặt chẽ và ghi nhận mọi
+      giao dịch trên mạng ngang hàng.&nbsp;
+    </p>
+
+    <p>
+      Mỗi khối (block) đều chứa thông tin về thời gian khởi tạo và được liên
+      kết với khối trước đó, kèm theo đó là một mã thời gian và dữ liệu giao
+      dịch. Dữ liệu khi đã được mạng lưới chấp nhận thì sẽ không có cách nào
+      thay đổi được. Blockchain được thiết kế để
+      <strong>chống lại việc gian lận, thay đổi của dữ liệu.</strong>
+    </p>
+
+    <p>
+      <img alt="Một chuỗi khối bao gồm các danh sách ghi chép được liên kết và bảo mật thông tin." height="356"
+        title="Một chuỗi khối bao gồm các danh sách ghi chép được liên kết và bảo mật thông tin." width="730"
+        class="lazy"
+        data-src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-2.png"
+        src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-2.png"
+        style="display: block; opacity: 1" />
+    </p>
+
+    <p>
+      <strong>Công nghệ Blockchain – sự kết hợp giữa 3 loại công nghệ:</strong>
+    </p>
+
+    <ul>
+      <li>
+        <strong>Mật mã học</strong>: để đảm bảo tính minh bạch, toàn vẹn và
+        riêng tư thì công nghệ Blockchain đã sử dụng public key và hàm hash
+        function.
+      </li>
+      <li>
+        <strong>Mạng ngang hàng</strong>: Mỗi một nút trong mạng được xem như
+        một client và cũng là server để lưu trữ bản sao ứng dụng.
+      </li>
+      <li>
+        <strong>Lý thuyết trò chơi</strong>: Tất cả các nút tham gia vào hệ
+        thống đều phải tuân thủ luật chơi đồng thuận (giao thức PoW, PoS,…) và
+        được thúc đẩy bởi động lực kinh tế.
+      </li>
+    </ul>
+
+    <p><strong>Hệ thống Blockchain chia thành 3 loại chính:</strong></p>
+
+    <ul>
+      <li>
+        <strong>Public:</strong> Bất kỳ ai cũng có quyền đọc và ghi dữ liệu
+        trên Blockchain. Quá trình xác thực giao dịch trên Blockchain này đòi
+        hỏi phải có rất nhiều nút tham gia. Vì vậy, muốn tấn công được vào hệ
+        thống Blockchain này cần chi phí rất lớn và thực sự không khả thi. Ví
+        dụ: Bitcoin, Ethereum,…
+      </li>
+      <li>
+        <strong>Private:</strong> Người dùng chỉ được quyền đọc dữ liệu, không
+        có quyền ghi vì điều này thuộc về bên tổ chức thứ ba tuyệt đối tin
+        cậy. Vì đây là một Private Blockchain, cho nên thời gian xác nhận giao
+        dịch khá nhanh vì chỉ cần một lượng nhỏ thiết bị tham gia xác thực
+        giao dịch. Ví dụ: Ripple là một dạng Private Blockchain, hệ thống này
+        cho phép 20% các nút là gian dối và chỉ cần 80% còn lại hoạt động ổn
+        định là được.
+      </li>
+      <li>
+        <strong>Permissioned (hay còn gọi là Consortium):</strong> một dạng
+        của Private nhưng bổ sung thêm 1 số tính năng khác, đây là sự kết hợp
+        giữa Public và Private. Ví dụ: Các ngân hàng hay tổ chức tài chính
+        liên doanh sẽ sử dụng Blockchain cho riêng mình.
+      </li>
+    </ul>
+
+    <p>
+      <img alt="Hệ thống Blockchain gồm 3 loại chính" style="width: 730px; height: 250px; display: block; opacity: 1"
+        title="Hệ thống Blockchain gồm 3 loại chính" class="lazy"
+        data-src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-4.png"
+        src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-4.png" />
+    </p>
+
+    <p><strong>Các phiên bản của công nghệ Blockchain</strong></p>
+
+    <ul>
+      <li>
+        <strong>Công nghệ Blockchain 1.0</strong> – Tiền tệ và Thanh toán: Ứng
+        dụng chính của phiên bản này là tiền mã hoá: bao gồm việc chuyển đổi
+        tiền tệ, kiều hối và tạo lập hệ thống thanh toán kỹ thuật số. Đây cũng
+        là lĩnh vực quen thuộc với chúng ta nhất mà đôi khi khá nhiều người
+        lầm tưởng Bitcoin và Blockchain là một.
+      </li>
+      <li>
+        <strong>Công nghệ Blockchain 2.0</strong> – Tài chính và Thị trường:
+        Ứng dụng xử lý tài chính và ngân hàng: mở rộng quy mô của Blockchain,
+        đưa vào các ứng dụng tài chính và thị trường. Các tài sản bao gồm cổ
+        phiếu, chi phiếu, nợ, quyền sở hữu và bất kỳ điều gì có liên quan đến
+        thỏa thuận hay hợp đồng.
+      </li>
+      <li>
+        <strong>Công nghệ Blockchain 3.0</strong> – Thiết kế và Giám sát hoạt
+        động:&nbsp; Đưa Blockchain vượt khỏi biên giới tài chính, và đi vào
+        các lĩnh vực như giáo dục, chính phủ, y tế và nghệ thuật.&nbsp;
+      </li>
+    </ul>
+
+    <p>
+      <img alt="Blockchain 3.0" height="500" title="Blockchain 3.0" width="730" class="lazy"
+        data-src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-3.jpg"
+        src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-3.jpg"
+        style="display: block; opacity: 1" />
+    </p>
+
+    <h3 id="hmenuid2">Các đặc điểm nổi bật của Blockchain</h3>
+
+    <p>Blockchain có các đặc điểm nổi bật sau:</p>
+
+    <ul>
+      <li>
+        <strong>Không thể làm giả, không thể phá hủy các chuỗi Blockchain:</strong>
+        theo như lý thuyết thì chỉ có máy tính lượng tử mới có thể giải mã
+        Blockchain và công nghệ Blockchain biến mất khi không còn Internet
+        trên toàn cầu.
+      </li>
+      <li>
+        <strong>Bất biến:</strong> dữ liệu trong Blockchain không thể sửa (có
+        thể sửa nhưng sẽ để lại dấu vết) và sẽ lưu trữ mãi mãi.
+      </li>
+      <li>
+        <strong>Bảo mật:</strong> Các thông tin, dữ liệu trong Blockchain được
+        phân tán và an toàn tuyệt đối.
+      </li>
+      <li>
+        <strong>Minh bạch:</strong> Ai cũng có thể theo dõi dữ liệu Blockchain
+        đi từ địa chỉ này tới địa chỉ khác và có thể thống kê toàn bộ lịch sử
+        trên địa chỉ đó.
+      </li>
+      <li>
+        <strong>Hợp đồng thông minh:</strong> là hợp đồng kỹ thuật số được
+        nhúng vào đoạn code if-this-then-that (IFTTT), cho phép chúng tự thực
+        thi mà không cần bên thứ ba.
+      </li>
+    </ul>
+
+    <p>
+      <img alt="Các đặc điểm của Blockchain" height="512" title="Các đặc điểm của Blockchain" width="730" class="lazy"
+        data-src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-5.jpg"
+        src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-5.jpg"
+        style="display: block; opacity: 1" />
+    </p>
+
+    <h3 id="hmenuid3">
+      <span class="dropcap" data-crown="">3</span>Blockchain hoạt động như thế
+      nào
+    </h3>
+
+    <p>
+      Ứng dụng được biết đến và thảo luận nhiều nhất về công nghệ Blockchain
+      chính là<strong> đồng tiền điện tử</strong>.&nbsp;Bitcoin là một đơn vị
+      tiền tệ kỹ thuật số với mã là BTC, cũng giống như đô la Mỹ bản thân nó
+      không mang giá trị, nó chỉ có giá trị bởi vì có một cộng đồng đồng ý sử
+      dụng nó làm đơn vị giao dịch hàng hóa và dịch vụ.
+    </p>
+
+    <p>
+      Để theo dõi số lượng Bitcoin mà mỗi người sở hữu trong các tài khoản
+      nhất định và theo dõi các giao dịch phát sinh từ đó thì chúng ta cần đến
+      một <strong>cuốn sổ kế toán</strong>, trong trường hợp này nó chính là
+      Blockchain và đây thực tế là một tệp kỹ thuật số theo dõi tất cả các
+      giao dịch Bitcoin.
+    </p>
+
+    <p>
+      <img alt="Ứng dụng được biết đến và thảo luận nhiều nhất về công nghệ Blockchain chính là đồng tiền điện tử "
+        height="293"
+        title="Ứng dụng được biết đến và thảo luận nhiều nhất về công nghệ Blockchain chính là đồng tiền điện tử "
+        width="730" class="lazy"
+        data-src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-7.png"
+        src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-7.png"
+        style="display: block; opacity: 1" />
+    </p>
+
+    <p>
+      Tệp sổ cái này không được lưu trữ trong một máy chủ trung tâm, như trong
+      một ngân hàng hoặc trong một trung tâm dữ liệu mà ngược lại nó được phân
+      phối trên toàn thế giới thông qua một mạng lưới các máy tính ngang hàng
+      với vai trò lưu trữ dữ liệu và thực thi các tính toán. Mỗi máy tính này
+      đại diện cho một “nút” của mạng lưới Blockchain và mỗi nút đều có một
+      bản sao của tệp sổ cái này.
+    </p>
+
+    <div class="infobox">
+      <strong>Một ví dụ dễ hiểu về giao thức chuyển tiền điện tử</strong>
+
+      <p>
+        Nếu David muốn gửi Bitcoin cho Sandra, anh ta sẽ phát một thông báo
+        tới mạng lưới và cho biết số lượng Bitcoin trong tài khoản của mình sẽ
+        giảm 5 BTC và số lượng Bitcoin trong tài khoản của Sandra sẽ tăng lên
+        tương ứng. Mỗi nút trong mạng sau đó sẽ nhận được thông báo này và ánh
+        sạ giao dịch được yêu cầu vào bản sao sổ cái kế toán của họ, và theo
+        đó số dư tài khoản của cả hai bên đều được cập nhật.
+      </p>
+
+      Nếu David muốn gửi Bitcoin cho Sandra, anh ta sẽ phát một thông báo tới
+      mạng lưới và cho biết số lượng Bitcoin trong tài khoản của mình sẽ giảm
+      5 BTC và số lượng Bitcoin trong tài khoản của Sandra sẽ tăng lên tương
+      ứng. Mỗi nút trong mạng sau đó sẽ nhận được thông báo này và ánh sạ giao
+      dịch được yêu cầu vào bản sao sổ cái kế toán của họ, và theo đó số dư
+      tài khoản của cả hai bên đều được cập nhật.
+    </div>
+
+    <p><strong>Nguyên lý mã hoá</strong></p>
+
+    <p>
+      <img alt="Nguyên lý mã hóa" height="400" title="Nguyên lý mã hóa" width="730" class="lazy"
+        data-src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-13-2.jpg"
+        src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-13-2.jpg"
+        style="display: block; opacity: 1" />
+    </p>
+
+    <p>
+      Trên thực tế, cuốn sổ cái luôn được duy trì bởi các máy tính trong
+      <strong>mạng ngang hàng</strong> được kết nối với nhau. Vì thế, nó sẽ có
+      một số điểm khác biệt:
+    </p>
+
+    <ul>
+      <li>
+        Trong hệ thống ngân hàng, chúng ta chỉ biết các giao dịch và số dư tài
+        khoản của riêng mình thì trên Blockchain của bitcoin bạn có thể xem
+        các giao dịch của tất cả mọi người.&ZeroWidthSpace;
+      </li>
+      <li>
+        Mạng lưới Bitcoin là mạng lưới phân tán không cần
+        <strong>bên thứ ba đóng vai trò trung gian</strong> xử lý giao
+        dịch.&ZeroWidthSpace;
+      </li>
+      <li>
+        Hệ thống Blockchain được thiết kế theo cách không yêu cầu sự tin cậy
+        và bảo đảm bởi độ tin cậy có được thông qua các hàm mã hóa toán học
+        đặc biệt.&ZeroWidthSpace;
+      </li>
+    </ul>
+
+    <p>
+      Để có thể thực hiện các giao dịch trên Blockchain, bạn cần một phần mềm
+      sẽ cho phép bạn lưu trữ và trao đổi các đồng Bitcoin của bạn gọi là ví
+      tiền điện tử. Ví tiền điện tử này sẽ được bảo vệ bằng một phương pháp mã
+      hóa đặc biệt đó là sử dụng một cặp khóa bảo mật duy nhất:
+      <strong>khóa riêng tư (private key) và khóa công khai (public key)</strong>.
+    </p>
+
+    <p>
+      Nếu một thông điệp được mã hóa bằng một khóa công khai cụ thể thì chỉ
+      chủ sở hữu của khóa riêng tư là một cặp với khóa công khai này mới có
+      thể giải mã và đọc nội dung thông điệp.
+    </p>
+
+    <p>
+      Khi mã hóa một yêu cầu giao dịch bằng khóa riêng tư, có nghĩa là bạn
+      đang tạo ra một chữ ký điện tử được các máy tính trong mạng lưới
+      Blockchain sử dụng để kiểm tra chủ thể gửi và tính xác thực của giao
+      dịch. Chữ ký này là một chuỗi văn bản và là sự kết hợp của yêu cầu giao
+      dịch và khóa riêng tư của bạn.
+    </p>
+
+    <p>
+      <img alt="Nguyên lí hoạt động của blockchain" style="width: 730px; height: 359px; display: block; opacity: 1"
+        title="Nguyên lí hoạt động của blockchain" class="lazy"
+        data-src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain1.jpg"
+        src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain1.jpg" />
+    </p>
+
+    <p>
+      Nếu một ký tự đơn trong thông điệp yêu cầu giao dịch này bị thay đổi thì
+      chữ ký điện tử sẽ thay đổi theo. Vì thế, hacker khó có thể thay đổi yêu
+      cầu giao dịch của bạn hoặc thay đổi số lượng Bitcoin mà bạn đang gửi.
+    </p>
+
+    <p>
+      Để gửi Bitcoin (BTC), bạn cần chứng minh rằng bạn sở hữu khóa riêng tư
+      của một chiếc ví điện tử cụ thể bởi bạn cần sử dụng nó để mã hóa thông
+      điệp yêu cầu giao dịch. Sau khi tin nhắn của bạn đã được gửi đi và được
+      mã hóa thì bạn không cần phải tiết lộ khóa riêng tư của bạn nữa.
+    </p>
+
+    <p><strong>Quy tắc của sổ cái</strong></p>
+
+    <p>
+      Mỗi nút trong Blockchain đều đang
+      <strong>lưu giữ một bản sao</strong> của sổ kế toán. Do vậy, mỗi nút đều
+      biết số dư tài khoản của bạn là bao nhiêu. Hệ thống Blockchain chỉ ghi
+      lại mỗi giao dịch được yêu cầu chứ không hề theo dõi số dư tài khoản của
+      bạn.
+    </p>
+
+    <p>
+      Để biết số dư trên ví điện tử của mình thì bạn cần xác thực và xác nhận
+      tất cả các giao dịch đã diễn ra trên mạng lưới mà có liên quan tới ví
+      điện tử của bạn.
+    </p>
+
+    <p>
+      Việc xác minh “số dư” này được thực hiện nhờ các tính toán dựa vào liên
+      kết đến các giao dịch trước đó. Nhìn vào hình trên, để gửi 10 BTC cho
+      John, Mary cần tạo yêu cầu giao dịch bao gồm các liên kết đến các giao
+      dịch đã diễn ra trước đó với tổng số dư bằng hoặc vượt quá 10 BTC.
+    </p>
+
+    <p>
+      <img alt="Xác minh số dư trong ví điện tử" height="404" title="Xác minh số dư trong ví điện tử" width="730"
+        class="lazy"
+        data-src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-8.png"
+        src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-8.png"
+        style="display: block; opacity: 1" />
+    </p>
+
+    <p>
+      Các liên kết này được xem như là giá trị đầu vào, các nút trong mạng
+      lưới sẽ xác minh xem tổng số tiền của các giao dịch này bằng hoặc vượt
+      quá 10 BTC không. Tất cả điều này được thực hiện tự động trong ví điện
+      tử của Mary và được kiểm tra bởi các nút trên mạng lưới Bitcoin, Mary
+      chỉ gửi một giao dịch 10 bitcoin tới ví của John bằng khóa công khai của
+      John.
+    </p>
+
+    <p>
+      <img alt="Tham chiếu lịch sử giao dịch" height="339" title="Tham chiếu lịch sử giao dịch" width="730" class="lazy"
+        data-src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-9.png"
+        src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-9.png"
+        style="display: block; opacity: 1" />
+    </p>
+
+    <p>
+      Thực tế là các nút sẽ kiểm tra tất cả các giao dịch có liên quan đến ví
+      tiền điện tử bạn sử dụng trước đó để gửi Bitcoin (BTC) thông qua việc
+      tham chiếu các lịch sử giao dịch. Có một bản ghi sẽ lưu trữ số BTC chưa
+      được dùng và được các nút mạng lưu giữ giúp đơn giản hóa và tăng tốc quá
+      trình xác minh. Vì thế, các ví tiền điện tử tránh được tình trạng chi
+      tiêu đúp giao dịch.
+    </p>
+
+    <p>
+      Mã nguồn trên mạng lưới Bitcoin là<strong> </strong>nguồn mở, có nghĩa
+      là bất kỳ ai có máy tính kết nối được internet đều có thể tham gia vào
+      mạng lưới và thực hiện giao dịch.
+    </p>
+
+    <p>
+      Tuy nhiên, nếu có bất kỳ một
+      <strong>lỗi nào trong mã nguồn </strong>được sử dụng để phát thông báo
+      yêu cầu giao dịch thì các Bitcoin liên quan sẽ bị mất vĩnh viễn.
+    </p>
+
+    <p>
+      Hãy nhớ rằng, sẽ không có bộ phận hỗ trợ khách hàng hoặc không hề có bất
+      cứ ai có thể giúp bạn khôi phục lại một giao dịch bị mất hoặc quên mật
+      khẩu ví tiền điện tử của bạn vì đây là mạng phân tán. Vì thế, bạn cần
+      phải <strong>lưu trữ</strong> mật khẩu hoặc khóa riêng tư của ví của bạn
+      cực kỳ <strong>cẩn thận và an toàn</strong>.
+    </p>
+
+    <p><strong>Nguyên lý tạo khối</strong></p>
+
+    <p>
+      Các giao dịch sau khi được gửi lên trên mạng lưới Blockchain sẽ được
+      nhóm vào các khối và các giao dịch trong cùng 1 khối (block) được coi là
+      đã xảy ra cùng thời điểm. Các giao dịch chưa được thực hiện trong 1 khối
+      được coi là chưa được xác nhận.
+    </p>
+
+    <p>
+      <img alt="Nguyên lý tạo khối" height="295" title="Nguyên lý tạo khối" width="730" class="lazy"
+        data-src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-12.png"
+        src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-la-gi-hoat-dong-cua-blockchain-nhu-the-nao-ung-dung-ra-sao-12.png"
+        style="display: block; opacity: 1" />
+    </p>
+
+    <p>
+      Mỗi nút có thể nhóm các giao dịch với nhau thành một khối và gửi nó vào
+      mạng lưới như một hàm ý cho các khối tiếp theo được gắn vào sau đó. Bất
+      kỳ nút nào cũng có thể tạo ra một khối mới. Vậy, câu hỏi đặt ra là: hệ
+      thống sẽ đồng thuận với khối nào? khối nào sẽ là khối tiếp theo?
+    </p>
+
+    <p>
+      Để được thêm vào Blockchain, mỗi khối phải chứa một đoạn mã đóng vai trò
+      như một đáp án cho một vấn đề toán học phức tạp được tạo ra bằng<strong>
+        hàm mã hóa băm không thể đảo ngược</strong>.
+    </p>
+
+    <p>
+      Cách duy nhất để giải quyết vấn đề toán học như vậy là
+      <strong>đoán các số ngẫu nhiên</strong>, những số khi mà kết hợp với nội
+      dung khối trước tạo ra một kết quả đã được hệ thống định nghĩa. Điều này
+      nhiều khi có thể mất khoảng một năm cho một máy tính điển hình với một
+      cấu hình cơ bản có thể đoán đúng các con số đáp án của vấn đề toán học
+      này.
+    </p>
+
+    <p>
+      <img alt="cấu trúc blockchain" style="width: 730px; height: 486px; display: block; opacity: 1"
+        title="cấu trúc blockchain" class="lazy"
+        data-src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-1.jpg"
+        src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/blockchain-1.jpg" />
+    </p>
+
+    <p>
+      Mạng lưới quy định mỗi khối được tạo ra sau một quãng thời gian là
+      <strong>10 phút </strong>một lần, bởi vì trong mạng lưới luôn có một số
+      lượng lớn các máy tính đều tập trung vào việc đoán ra dãy số này. Nút
+      nào giải quyết được vấn đề toán học như vậy sẽ được quyền gắn khối tiếp
+      theo lên trên chuỗi và gửi nó tới toàn bộ mạng lưới.
+    </p>
+
+    <p>
+      Vậy điều gì sẽ xảy ra nếu hai nút giải quyết cùng một vấn đề cùng một
+      lúc và truyền các khối kết quả của chúng đồng thời lên mạng lưới? Trong
+      trường hợp này, cả hai khối được gửi lên mạng lưới và mỗi nút sẽ xây
+      dựng các khối kế tiếp trên khối mà nó nhận được trước tiên.
+    </p>
+
+    <p>
+      Tuy nhiên, hệ thống Blockchain luôn yêu cầu mỗi nút phải xây dựng trên
+      chuỗi khối dài nhất mà nó nhận được. Vì vậy, nếu có sự mơ hồ về việc
+      block nào là khối cuối cùng thì ngay sau khi khối tiếp theo được giải
+      quyết thì mỗi nút sẽ áp dụng vào <strong>chuỗi dài nhất</strong>.
+    </p>
+
+    <p>
+      <img alt="Chuỗi blockchain" style="width: 730px; height: 487px; display: block; opacity: 1"
+        title="Chuỗi blockchain" class="lazy"
+        data-src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/istock-913016488.jpg"
+        src="https://cdn.tgdd.vn/Files/2019/06/05/1171145/istock-913016488.jpg" />
+    </p>
+
+    <p>
+      Do xác suất việc xây dựng các block đồng thời là rất thấp nên hầu như
+      không có trường hợp nhiều khối được giải quyết cùng một lúc và nhiều lần
+      tạo ra các khối nối đuôi khác nhau. Do đó, toàn bộ chuỗi-khối sẽ nhanh
+      chóng ổn định và hợp nhất lại khi mà mọi nút đều đồng thuận.
+    </p>
+
+    <h3 id="hmenuid4">
+      Ứng dụng thực tiễn của công nghệ Blockchain trong cuộc sống
+    </h3>
+
+    <p>
+      Một số ngành công nghiệp mà công nghệ Blockchain có thể<strong>
+        tác động</strong>
+      đến như:
+    </p>
+
+    <ul>
+      <li>Công nghệ ô tô Automotive (Automotive)</li>
+      <li>Chế tạo (Manufacturing)</li>
+      <li>
+        Công nghệ, truyền thông và viễn thông (Tech, media &amp;
+        Telecommunications)
+      </li>
+      <li>Dịch vụ tài chính (Financial Services)</li>
+      <li>Nghệ thuật &amp; Giải trí (Art &amp; Recreation)</li>
+      <li>Chăm sóc sức khỏe (Healthcare)</li>
+      <li>Bảo hiểm (Insurance)</li>
+      <li>Bán lẻ (Retail)</li>
+      <li>Khu vực công (Public Sector)</li>
+      <li>Bất động sản (Property)</li>
+      <li>Nông nghiệp (Agricultural)</li>
+      <li>Khai thác (Mining)</li>
+      <li>Vận tải và Logistics (Transport &amp; Logistics)</li>
+      <li>Công trình hạ tầng kỹ thuật (Utility)</li>
+    </ul>
+
+  
+
+    <p>
+      <em>Hiện nay có rất nhiều công ty và tập đoàn lớn đang xây dựng mạng lưới
+        của riêng mình bằng công nghệ Blockchain. Chắc chắn rằng Blockchain sẽ
+        tạo nên một cuộc cách mạng trong vài năm tới ở Việt Nam và đóng vai
+        trò ngày càng lớn trong việc thay đổi thế giới CNTT.</em>
+    </p>
+
+   
+  </div>
+</body>
+
+</html>
