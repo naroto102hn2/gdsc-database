@@ -1,0 +1,271 @@
+<div class="post-body">
+  <div>
+  <figure>
+    <img src="https://i.postimg.cc/DyH8tWJy/imager-1449.jpg" alt="Web Components" />
+    <figcaption>Reference</figcaption>
+  </figure>
+
+  <h1 id="gioi-thieu">Giới thiệu</h1>
+
+  <p>
+    <strong>Web Components</strong> là một bộ các công nghệ khác nhau cho phép
+    bạn tạo các phần tử tùy chỉnh có thể tái sử dụng với chức năng của chúng
+    được gói gọn trong phần còn lại của code và sử dụng chúng trong các ứng dụng
+    web của bạn.
+  </p>
+
+  <p>
+    Bài viết này giả định hiểu biết cơ bản về HTML, CSS và JavaScript. Nếu bạn
+    cảm thấy yếu ở một trong những lĩnh vực đó, đừng lo lắng, việc xây dựng một
+    yếu tố tùy chỉnh thực sự đơn giản hóa nhiều sự phức tạp trong phát triển
+    front-end.
+  </p>
+
+  <h1 id="concepts-and-usage">Thành phần và cách sử dụng</h1>
+
+  <p>
+    Web Components bao gồm ba công nghệ chính, có thể được sử dụng cùng nhau để
+    tạo ra các phần tử tùy chỉnh linh hoạt với chức năng được đóng gói có thể
+    được sử dụng lại ở bất cứ đâu bạn muốn mà không sợ xung đột code.
+  </p>
+  <p>Web Components bao gồm ba công nghệ riêng biệt được sử dụng cùng nhau:</p>
+  <ul>
+    <li>
+      <strong>Custom Elements</strong>. Nói một cách đơn giản, đây là các thành
+      phần HTML hợp lệ với các template, behaviors và tag name tùy chỉnh (ví dụ:
+      <code>&lt;one-dialog&gt;</code> ) được tạo bằng một bộ API JavaScript. Các
+      thành phần tùy chỉnh được mô tả trong
+      <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements"
+        target="_blank">custom-element</a>.
+    </li>
+    <li>
+      <strong>Shadow DOM</strong>. Có khả năng cô lập CSS và JavaScript, gần
+      giống như <code>&lt;iframe&gt;</code> . Điều này được định nghĩa trong
+      <a href="https://dom.spec.whatwg.org/#shadow-trees" target="_blank">shadow-trees</a>
+      .
+    </li>
+    <li>
+      <strong>HTML templates</strong>. Các template do người dùng xác định trong
+      HTML không được hiển thị cho đến khi được gọi. Thẻ
+      <code>&lt;template&gt;</code> được xác định trong
+      <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-template-element"
+        target="_blank">template-element</a>
+      .
+    </li>
+  </ul>
+
+  <p>Đây là những gì tạo nên đặc tả cho web components.</p>
+
+  <p>
+    <a href="https://github.com/w3c/webcomponents/issues/645" target="_blank">HTML Modules</a>
+    có thể là công nghệ thứ tư trong danh sách trên, nhưng nó vẫn chưa được
+    triển khai trong bất kỳ trình duyệt lớn nào. Nhóm Chrome đã thông báo
+    <a href="https://twitter.com/intenttoship/status/1085742504958279682" target="_blank">ý định triển khai chúng trong
+      phiên bản tương lai</a>.
+  </p>
+  <p>
+    Web Components thường có sẵn trong tất cả các trình duyệt chính ngoại trừ
+    Microsoft Edge và Internet Explorer 11, nhưng
+    <a href="https://github.com/webcomponents/webcomponentsjs" target="_blank">các polyfill tồn tại để lấp đầy các
+      khoảng trống đó</a>
+    .
+  </p>
+  <p>
+    Việc gọi bất kỳ thứ nào trong số này là Web Components là chính xác về mặt
+    kỹ thuật vì bản thân thuật ngữ này hơi lằng nhằng. Kết quả là, mỗi công nghệ
+    có thể được sử dụng độc lập hoặc kết hợp với bất kỳ công nghệ nào khác. Nói
+    cách khác, chúng không loại trừ lẫn nhau.
+  </p>
+
+  <h2 id="custom-elements">I. Custom Elements</h2>
+
+  <p>
+    Chứa chức năng liên quan đến các phần tử tùy chỉnh, đáng chú ý nhất là<br>
+    <dt><a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/CustomElementRegistry/define"><code>CustomElementRegistry.define()</code></a>
+    </dt>
+  <p>Được sử dụng để đăng ký các phần tử tùy chỉnh mới để sau đó chúng có thể được sử dụng trong tài liệu của bạn.</p>
+  </p>
+
+  <dt><a
+      href="https://developer.mozilla.org/en-US/docs/Web/API/Window/customElements"><code>Window.customElements</code></a>
+  </dt>
+  <p>Trả về một tham chiếu đến đối tượng <code>CustomElementRegistry</code>.</p>
+  <dt><a
+      href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#using_the_lifecycle_callbacks"><code>Life cycle callbacks</code></a>
+  </dt>
+  <dd>
+    <p>Các hàm gọi lại đặc biệt được xác định bên trong định nghĩa lớp của phần tử tùy chỉnh, ảnh hưởng đến hành vi của
+      nó:</p>
+    <ul>
+      <li><code>connectedCallback</code>: Được gọi khi phần tử tùy chỉnh được kết nối lần đầu tiên với DOM.</li>
+      <li><code>disconnectedCallback</code>: Được gọi khi phần tử tùy chỉnh bị ngắt kết nối khỏi DOM.</li>
+      <li><code>adoptedCallback</code>: Được gọi khi phần tử tùy chỉnh được chuyển sang tài liệu mới.</li>
+      <li><code>attributeChangedCallback</code>: Được gọi khi một trong các thuộc tính của phần tử tùy chỉnh được thêm,
+        xóa hoặc thay đổi.</li>
+    </ul>
+  </dd>
+  <dt>CSS pseudo-classes</dt>
+  <dd>
+    <p>Các lớp giả liên quan cụ thể đến các phần tử tùy chỉnh:</p>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:defined"><code>:defined</code></a>: Đối sánh với
+        bất kỳ phần tử nào được xác định, bao gồm các phần tử được tạo sẵn và các phần tử tùy chỉnh được xác định bằng
+        <code>CustomElementRegistry.define()</code>).</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:host"><code>:host</code></a>: Chọn shadow host của
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM">shadow DOM</a> chứa CSS.
+      </li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:host()"><code>:host()</code></a>: Chọn shadow host
+        của <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM">shadow DOM</a> chứa
+        CSS mà nó được sử dụng bên trong (vì vậy bạn có thể chọn một phần tử tùy chỉnh từ bên trong shadow DOM của nó) -
+        nhưng chỉ khi bộ chọn được cung cấp làm thông số của hàm khớp với shadow host.</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:host-context()"><code>:host-context()</code></a>:
+        Chọn shadow host của <a
+          href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM">shadow DOM</a> chứa CSS mà
+        nó được sử dụng bên trong (vì vậy bạn có thể chọn một phần tử tùy chỉnh từ bên trong shadow DOM của nó) - nhưng
+        chỉ khi bộ chọn được cung cấp làm tham số của hàm khớp với (các) tổ tiên của shadow host ở nơi nó nằm bên trong
+        hệ thống phân cấp DOM.</li>
+    </ul>
+  </dd>
+  <dt>CSS pseudo-elements</dt>
+  <dd>
+    <p>Pseudo-elements liên quan cụ thể đến các yếu tố tùy chỉnh:</p>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::part"><code>::part</code></a>: Đại diện cho bất kỳ
+        phần tử nào trong một <a
+          href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM">shadow tree</a> có một sự
+        phù hợp <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-part"><code>part</code></a>.
+      </li>
+    </ul>
+  </dd>
+
+  </dl>
+</div>
+<h2 id="shadow-dom">II. Shadow DOM</h2>
+
+<div>
+  <dl>
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot"><code>ShadowRoot</code></a></dt>
+    <dd>
+      <p>Đại diện cho nút gốc của cây con shadow DOM.</p>
+    </dd>
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element"><code>Element</code></a> extensions</dt>
+    <dd>
+      <p>Các phần mở rộng của giao diện <code>Element</code> liên quan đến shadow DOM:</p>
+      <ul>
+        <li><a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow"><code>Element.attachShadow()</code></a>
+          phương thức đính kèm một cây shadow DOM vào phần tử được chỉ định.</li>
+        <li><a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot"><code>Element.shadowRoot</code></a>
+          thuộc tính trả về gốc bóng tối được đính kèm với phần tử được chỉ định hoặc null nếu không có gốc bóng tối nào
+          được đính kèm.</li>
+      </ul>
+    </dd>
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node"><code>Node</code></a> liên quan</dt>
+    <dd>
+      <p>Các bổ sung cho giao diện Node có liên quan đến Shadow DOM:</p>
+      <ul>
+        <li><a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Node/getRootNode"><code>Node.getRootNode()</code></a>
+          phương thức trả về gốc của đối tượng ngữ cảnh, tùy chọn bao gồm gốc bóng nếu nó có sẵn.</li>
+        <li><a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Node/isConnected"><code>Node.isConnected</code></a>
+          thuộc tính trả về một boolean cho biết liệu Node có được kết nối (trực tiếp hoặc gián tiếp) với đối tượng ngữ
+          cảnh hay không.</li>
+      </ul>
+    </dd>
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event"><code>Event</code></a> extensions</dt>
+    <dd>
+      <p>Các mở rộng của giao diện <code>Event</code> liên quan đến shadow DOM:</p>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/composed"><code>Event.composed</code></a>:
+          Trả về một&nbsp;<a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean"><code>Boolean</code></a>
+          cho biết liệu sự kiện sẽ lan truyền qua ranh giới shadow DOM vào standard DOM (true) hay không (false).</li>
+        <li><a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Event/composedPath"><code>Event.composedPath</code></a>:
+          Trả về đường dẫn của sự kiện (các đối tượng mà người nghe sẽ được gọi). Điều này không bao gồm các nút trong
+          cây bóng nếu gốc bóng được tạo bằng <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/mode"><code>ShadowRoot.mode</code></a>
+          đóng.</li>
+      </ul>
+    </dd>
+
+  </dl>
+</div>
+<h2 id="html-templates">III. HTML Templates</h2>
+
+<div>
+  <dl>
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template"><code>&lt;template&gt;</code></a>
+    </dt>
+    <dd>
+      <p>Chứa một đoạn HTML không được hiển thị khi tài liệu chứa được tải ban đầu, nhưng có thể được hiển thị trong
+        thời gian chạy bằng JavaScript, chủ yếu được sử dụng làm cơ sở của cấu trúc phần tử tùy chỉnh. Giao diện DOM
+        được liên kết là <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLTemplateElement"><code>HTMLTemplateElement</code></a>.
+      </p>
+    </dd>
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot"><code>&lt;slot&gt;</code></a></dt>
+    <dd>
+      <p>Một trình giữ chỗ bên trong một thành phần web mà bạn có thể điền bằng đánh dấu của riêng mình, cho phép bạn
+        tạo các cây DOM riêng biệt và trình bày chúng cùng nhau. Giao diện DOM được liên kết là <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement"><code>HTMLSlotElement</code></a>.</p>
+    </dd>
+    <dt>Thuộc tính <a
+        href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/slot"><code>slot</code></a> HTML toàn
+      cục</dt>
+    <dd>
+      <p>Gán một vị trí trong cây bóng shadow DOM cho một phần tử.</p>
+    </dd>
+    <dt><a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Element/assignedSlot"><code>Element.assignedSlot</code></a>
+    </dt>
+    <dd>
+      <p>Thuộc tính chỉ đọc trả về một tham chiếu đến <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot"><code>&lt;slot&gt;</code></a> trong đó
+        phần tử này được chèn vào.</p>
+    </dd>
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/API/Text/assignedSlot"><code>Text.assignedSlot</code></a>
+    </dt>
+    <dd>
+      <p>Thuộc tính chỉ đọc trả về một tham chiếu đến <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot"><code>&lt;slot&gt;</code></a> trong đó
+        văn bản được chèn vào.</p>
+    </dd>
+    <dt><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element"><code>Element</code></a> extensions</dt>
+    <dd>
+      <p>Các phần mở rộng của giao diện <code>Element</code> liên quan đến slots:</p>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/slot"><code>Element.slot</code></a>: Trả
+          về tên của vị trí shadow DOM được đính kèm với phần tử.</li>
+      </ul>
+    </dd>
+    <dt>CSS pseudo-elements</dt>
+    <dd>
+      <p>Pseudo-elements liên quan đặc biệt đến slots:</p>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::slotted"><code>::slotted</code></a>: Khớp với
+          bất kỳ nội dung nào được chèn vào slot.</li>
+      </ul>
+    </dd>
+    <dt>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement/slotchange_event" title="/en-US/docs/Web/Events/slotchange">slotchange</a></code>
+      event</dt>
+    <dd>
+      <p>Kích hoạt trên một<a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSlotElement"><code>HTMLSlotElement</code></a> ví dụ
+        (<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot"><code>&lt;slot&gt;</code></a> element)
+        khi (các) nút có trong vị trí đó thay đổi.</p>
+    </dd>
+
+    <h1>Tổng kết</h1>
+    <p>Khi việc phát triển web tiếp tục trở nên ngày càng phức tạp, nó sẽ bắt đầu có ý nghĩa đối với các nhà phát triển
+      như chúng ta bắt đầu trì hoãn ngày càng nhiều sự phát triển cho chính nền tảng web đã tiếp tục phát triển. Các đặc
+      tả của Web Components là một bộ API cấp thấp sẽ tiếp tục phát triển và phát triển khi nhu cầu của chúng ta khi các
+      nhà phát triển phát triển.</p>
+
+</div>
+</div>
