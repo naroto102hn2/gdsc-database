@@ -1,5 +1,4 @@
 <div class="post-body">
-    <h1 id="su-khac-biet-giua-bfs-va-dfs">Sự khác biệt giữa BFS và DFS</h1>
     <p>
         Sự khác biệt chính giữa BFS và DFS là BFS tiến hành theo cấp độ trong khi DFS theo sau một đường dẫn từ nút bắt
         đầu đến nút kết thúc (đỉnh),
@@ -25,41 +24,37 @@
     <figure>
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Animated_BFS.gif"/>
     </figure>
-    <pre>
-            <code class="language-java">
-                import java.util.LinkedList;
-                import java.util.Queue;
-                class BreadthFistSearch{
-                    //  Breadth-First Search with directed graphs 
-                    //  The problem is to find out if there is a path from one vertex to another
-                    static boolean BFS(int a, int b, int[][] G, int n){
-                        Queue&lt;Integer&gt; fringer = new LinkedList&lt;&gt;();
-                        Queue&lt;Integer&gt; close = new LinkedList&lt;&gt;();
-                        fringer.add(a); // push a in the queue
-                        while(fringer.peek() != null){    // return &quot;null&quot; if queue = hollow
-                            int direct = fringer.poll();
-                            if(direct == b){
-                                return true;
-                            }else{
-                                close.add(direct);
-                            }
-                            for(int i = 0; i &lt; G.length; i++){
-                                if(G[i][0] == direct){
-                                    fringer.add(G[i][1]);
-                                }
-                            }
-                        }
-                        return false;
-                    }
-                    public static void main(String[] args) {
-                        int n = 8;    // Number of vertices given by the problem
-                        int[][] G = {{1,2}, {1,3}, {2,4}, {2,5}, {3,6}, {3,7}, {5,8}}; //Array g stores the paths of the vertices 
-                        System.out.println(BFS(3, 4, G, n));    // result : false
-                        System.out.println(BFS(1, 7, G, n));    // result : true
-                    }
+    <pre><code class="language-java">import java.util.LinkedList;
+import java.util.Queue;
+class BreadthFistSearch{
+    //  Breadth-First Search with directed graphs
+    //  The problem is to find out if there is a path from one vertex to another
+    static boolean BFS(int a, int b, int[][] G, int n){
+        Queue&lt;Integer&gt; fringer = new LinkedList&lt;&gt;();
+        Queue&lt;Integer&gt; close = new LinkedList&lt;&gt;();
+        fringer.add(a); // push a in the queue
+        while(fringer.peek() != null){    // return &quot;null&quot; if queue = hollow
+            int direct = fringer.poll();
+            if(direct == b){
+                return true;
+            }else{
+                close.add(direct);
+            }
+            for(int i = 0; i &lt; G.length; i++){
+                if(G[i][0] == direct){
+                    fringer.add(G[i][1]);
                 }
-            </code>
-        </pre>
+            }
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+        int n = 8;    // Number of vertices given by the problem
+        int[][] G = {{1,2}, {1,3}, {2,4}, {2,5}, {3,6}, {3,7}, {5,8}}; //Array g stores the paths of the vertices
+        System.out.println(BFS(3, 4, G, n));    // result : false
+        System.out.println(BFS(1, 7, G, n));    // result : true
+    }
+}</code></pre>
     <h1 id="dinh-nghia-cua-dfs">Định nghĩa của DFS</h1>
     <p>
         Phương pháp di chuyển ngang <strong>tìm kiếm sâu (DFS)</strong>
@@ -72,39 +67,35 @@
     <figure>
         <img src="https://wiki.gladiabots.com/images/7/7f/Depth-First-Search.gif"/>
     </figure>
-    <pre>
-            <code class="language-java">
-                import java.util.Stack;
-                public class Depthfirstsearch {
-                static boolean DFS(int a, int b, int[][] G){
-                    Stack&lt;Integer&gt; fringer = new Stack&lt;&gt;();
-                    Stack&lt;Integer&gt; close = new Stack&lt;&gt;();
-                    fringer.push(a);    // push a in the queue
-                    while(!fringer.empty()){    // return &quot;null&quot; if queue = hollow
-                        int direct = fringer.pop();
-                        if(direct == b) {
-                            return true;
-                        } else {
-                            close.push(direct);
-                        }
-                        for(int i = 0; i &lt; G.length; i++) {
-                            if(G[i][0] == direct){
-                                fringer.push(G[i][1]);
-                            }
-                        }
-                    }
-                    return false;
-                }
-                public static void main(String[] args) {
-                    int n = 8;    // Number of vertices given by the problem
-                    int[][] G = {{1,2}, {1,3}, {2,4}, {2,5}, {3,6}, {3,7}, {5,8}}; //Array g stores the paths of the vertices 
-                    
-                    System.out.println(DFS(1, 8, G));    // result : true
-                    System.out.println(DFS(2, 7, G));    // result : false
+    <pre><code class="language-java">import java.util.Stack;
+    public class Depthfirstsearch {
+    static boolean DFS(int a, int b, int[][] G){
+        Stack&lt;Integer&gt; fringer = new Stack&lt;&gt;();
+        Stack&lt;Integer&gt; close = new Stack&lt;&gt;();
+        fringer.push(a);    // push a in the queue
+        while(!fringer.empty()){    // return &quot;null&quot; if queue = hollow
+            int direct = fringer.pop();
+            if(direct == b) {
+                return true;
+            } else {
+                close.push(direct);
+            }
+            for(int i = 0; i &lt; G.length; i++) {
+                if(G[i][0] == direct){
+                    fringer.push(G[i][1]);
                 }
             }
-            </code>
-        </pre>
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+        int n = 8;    // Number of vertices given by the problem
+        int[][] G = {{1,2}, {1,3}, {2,4}, {2,5}, {3,6}, {3,7}, {5,8}}; //Array g stores the paths of the vertices
+
+        System.out.println(DFS(1, 8, G));    // result : true
+        System.out.println(DFS(2, 7, G));    // result : false
+    }
+}</code></pre>
     <blockquote>
         <h1 id="su-khac-biet-chinh-giua-bfs-va-dfs"><strong>Sự khác biệt chính giữa BFS và DFS</strong></h1>
         <ul>
