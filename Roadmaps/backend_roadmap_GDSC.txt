@@ -1,0 +1,130 @@
+Backend Roadmap
+
+1. Internet [Khuyến khích] 
+	Cách Internet hoạt động [Khuyến khích]
+	HTTP [Khuyến khích]
+	Trình duyệt [Khuyến khích]
+	DNS [Khuyến khích]
+	Tên miền [Khuyến khích]
+	Hosting [Khuyến khích]
+2. Kiến thức Frontend cơ bản [Khuyến khích]
+	HTML [Khuyến khích]
+	CSS [Khuyến khích]
+	Javascript [Khuyến khích]
+3. Kiến thức Hệ điều hành cơ bản [Khuyến khích]
+	Sử dụng Terminal [Khuyến khích]
+	Cách hệ điều hành hoạt động [Khuyến khích]
+	Quản lý process [Khuyến khích]
+	Threads và Xử lý Concurrency [Khuyến khích]
+	Các lệnh terminal cơ bản: grep, owk, sed, lsof, curl, wget, tail, head, less, find, ssh, kill [Khuyến khích]
+	Quản lý bộ nhớ [Khuyến khích]
+	Giao tiếp liên process [Khuyến khích]
+	Quản lý I/O (Khuyên dùng)
+	POSIX cơ bản: stdin, stdout, stderr, pipes (Khuyên dùng)
+	Các khái niệm cơ bản về mạng máy tính (Khuyên dùng)
+4. Học một ngôn ngữ lập trình : Phải nắm rõ cơ chế của ngôn ngữ đó, ví dụ: concurrency, bộ nhớ...
+	Javascript [Khuyến khích]
+	Java [Lựa chọn khác]
+	C# [Lựa chọn khác]
+	PHP [Lựa chọn khác]
+	Python [Lựa chọn khác]
+	Ruby [Lựa chọn khác]
+5. Quản lý code (Version Control)
+	Sử dụng Git cơ bản [Khuyến khích]
+	Dịch vụ hosting repository
+		GitHub [Khuyến khích]
+		GitLab [Lựa chọn khác]
+		Bitbucket [Lựa chọn khác]
+6. Cơ sở dữ liệu Quan hệ
+	PostgreSQL [Khuyến khích]
+	MySQL [Lựa chọn khác]
+	MariaDB [Lựa chọn khác]
+	MS SQL [Lựa chọn khác]
+	Oracle [Lựa chọn khác]
+7. Cơ sở dữ liệu NoSQL
+	MongoDB [Khuyến khích]
+	RethinkDB [Lựa chọn khác]
+	CouchDB [Lựa chọn khác]
+	DynamoDB [Lựa chọn khác]
+8. Cơ sở dữ liệu nâng cao
+	ORMs [Khuyến khích]
+	ACID [Khuyến khích]
+	Transactions [Khuyến khích]
+	N + 1 Problem [Khuyến khích]
+	Chuẩn hóa (Normalize) Cơ sở dữ liệu [Khuyến khích]
+	Indexes [Khuyến khích]
+	Nhân bản dữ liệu [Không bắt buộc]
+	Kỹ thuật Sharding [Không bắt buộc]
+	Định lý CAP [Không bắt buộc]
+9. APIs
+	REST [Khuyến khích]
+	JSON APIs [Khuyến khích]
+	SOAP [Không bắt buộc]
+	HATEOAS [Không bắt buộc]
+	Tiêu chuẩn OpenAPI và Ngôn ngữ Swagger [Không bắt buộc]
+	Authentication [Khuyến khích]
+		Cookie Based [Không bắt buộc]
+		OAuth [Khuyến khích]
+		Basic Authentication [Khuyến khích]
+		Token Authentication [Khuyến khích]
+		JWT [Khuyến khích]
+		OpenID [Không bắt buộc]
+		SAML [Không bắt buộc]
+10. Caching
+	CDN [Khuyến khích]
+	Server side
+		Redis [Khuyến khích]
+		Memcached [Lựa chọn khác]
+	Client side [Khuyến khích]
+11. Bảo mật Web
+	Thuật toán hashing [Khuyến khích]
+		MD5
+		SHA
+		scrypt, bcrypt
+	Khác [Khuyến khích]
+		HTTPS
+		Content Security Policy
+		CORS
+		SSl/TLS
+		Các rủi ro bảo mật OWASP
+12. Test
+	Integration test [Khuyến khích]
+	Unit test [Khuyến khích]
+	Functional test [Khuyến khích]
+13. CI/CD (Continuous integration/Continuous delivery) [Khuyến khích]
+14. Các quy tắc Thiết kế và Phát triển
+	GOF Design Patterns [Không bắt buộc]
+	Thiết kế hướng nghiệp vụ (Doman driven) [Không bắt buộc]
+	Phát triển hướng kiểm thử (Test driven) [Không bắt buộc]
+	SOLID [Khuyến khích]
+	KISS [Khuyến khích]
+	YAGNI [Khuyến khích]
+	DRY [Khuyến khích]
+15. Architectural Patterns
+	Monolithic [Khuyến khích]
+	Microservices [Khuyến khích]
+	SOA [Khuyến khích]
+	CQRS và Event sourcing [Không bắt buộc]
+	Serverless [Khuyến khích]
+16. Công cụ tìm kiếm
+	Elasticsearch [Khuyến khích]
+	Solr [Lựa chọn khác]
+17. Message Brokers [Không bắt buộc]
+18. Công nghệ Ảo hóa/Tự động hóa
+	Docker [Khuyến khích]
+	rkt [Không khuyến khích]
+	LXC [Không khuyến khích]
+19. GraphQL [Không bắt buộc]
+20. Cơ sở dữ liệu Graph [Không bắt buộc]
+	Neo4j [Không bắt buộc]
+21. WebSockets [Không bắt buộc]
+22. Web Servers [Không bắt buộc]
+	nginx [Không bắt buộc] [Khuyến khích]
+	Apache [Lựa chọn khác]
+	Caddy [Lựa chọn khác]
+	MS IIS [Lựa chọn khác]
+23. Build thế nào để Scale? : Những vấn đề cần lưu ý khi phát triển sản phẩm lớn và lâu dài [Khuyến khích]
+	Kỹ thuật Migration [Khuyến khích]
+	Scale theo chiều Ngang và Dọc [Khuyến khích]
+	Build with Observability: Logging và những yếu tố có thể quan sát được, có thể giúp debug và giải quyết các vấn đề nghiêm trọng [Khuyến khích]
+24. Học, học nữa, học mãi	

@@ -1,0 +1,150 @@
+Frontend Roadmap
+
+1. Internet 
+	Cách Internet hoạt động [Khuyến khích]
+	HTTP [Khuyến khích]
+	Trình duyệt [Khuyến khích]
+	DNS [Khuyến khích]
+	Tên miền [Khuyến khích]
+	Hosting [Khuyến khích]
+2. HTML
+	Cơ bản về HTML [Khuyến khích]
+	Viết Semantic HTML [Không bắt buộc]
+	Forms và Validate form [Khuyến khích]
+	Quy ước và Kinh nghiệm [Khuyến khích]
+	Accessibility [Không bắt buộc]
+	SEO [Không bắt buộc]
+3. CSS
+	Cơ bản về CSS [Khuyến khích]
+	Bố cục [Khuyến khích]
+		Float [Khuyến khích]
+		Positioning [Khuyến khích]
+		Display [Khuyến khích]
+		Box Model [Khuyến khích]
+		CSS Grid [Khuyến khích]
+		Flex Box [Khuyến khích]
+	Responsive và Media Queries [Khuyến khích]
+4. JavaScript
+	Cú pháp và cấu trúc cơ bản
+	Thao tác với DOM
+	Fetch API/Ajax (XHR)
+	ES6+ và modular JavaScript
+	Hoistings, Event Bubbing, Scope, Prototype, Shadow DOM, strict
+5. Quản lý code (Version Control)
+	Sử dụng Git cơ bản [Khuyến khích]
+	Dịch vụ hosting repository
+		GitHub [Khuyến khích]
+		GitLab [Một option]
+		Bitbucket [Một option]
+6. Bảo mật Web [Không bắt buộc]
+	HTTPS
+	Content Security Policy
+	CORS
+	Các rủi ro bảo mật OWASP 
+7. Quản lý Package
+	npm [Khuyến khích]
+	yarn [Khuyến khích]
+8. Kiến trúc CSS [Không bắt buộc]
+	BEM [Không bắt buộc]
+	OOCSS [Không khuyến khích]
+	SMACSS [Không khuyến khích]
+9. Tiền xử lý CSS [Không bắt buộc]
+	Sass [Không bắt buộc]
+	PostCSS [Không bắt buộc]
+	Less [Không khuyến khích]
+10. Xây dựng Tools
+	Task Runners
+		npm script [Khuyến khích]
+		Gulp [Không khuyến khích]
+	Linters và Formatters
+		Prettiers [Không bắt buộc]
+		ESLint [Không bắt buộc]
+		StandardJS [Không khuyến khích]
+	Module Bundlers
+		Webpack [Khuyến khích]
+		Rollup [Lựa chọn khác]
+		Parcel [Lựa chọn khác]
+11. Chọn Framework
+	React.js [Khuyến khích]
+		Redux [Khuyến khích]
+		MobX [Lựa chọn khác]
+	Angular [Lựa chọn khác]
+		RxJS [Lựa chọn khác]
+		NgRX [Lựa chọn khác]
+	Vue.js [Lựa chọn khác]
+		VueX[Lựa chọn khác]
+12. CSS hiện đại
+	Styled Components [Khuyến khích]
+	CSS Modules [Khuyến khích]
+	Styled JSX [Lựa chọn khác]
+ 	Emotion [Lựa chọn khác]
+	Radium [Không khuyến khích]
+	Glamorous [Không khuyến khích]
+13. Component trong Web [Không bắt buộc]
+	HTML Templates [Không bắt buộc]
+	Custom Elements [Không bắt buộc]
+	Shadow DOM [Không bắt buộc]
+14. CSS Frameworks
+	(Dựa trên JS và phù hợp cho các project dùng Javascript framework)
+		Reactstrap [Khuyến khích]
+		Material UI [Khuyến khích]
+		Tailwind CSS [Lựa chọn khác]
+		Chakra UI [Lựa chọn khác]
+	(Dựa trên CSS và không có sẵn component)
+		Bootstrap [Khuyến khích]
+		Materialize CSS [Lựa chọn khác]
+		Bulma [Lựa chọn khác]
+15. Test : Tìm hiểu sự khác nhau giữa Unit Test, Intergration Test và Functional Test và cách dùng các tools sau
+	Jest [Khuyến khích]
+	react-testing-library [Khuyến khích]
+	Cypress [Khuyến khích]
+	Enzyme [Khuyến khích]
+16. Type Checkers [Không bắt buộc]
+	TypeScript [Khuyến khích] 
+	Flow [Không khuyến khích]
+17. Progressive Web Apps [Không bắt buộc]
+	Web APIs trong PWAs [Không bắt buộc]
+		Lưu trữ
+		Web Sockets
+		Service Workers
+		Vị trí
+		Thông báo
+		Chiều thiết bị
+		Thanh toán
+		Credentials
+	Tính toán, Đo đạc và Cải thiện hiệu năng [Không bắt buộc]
+		PRPL Pattern
+		RAIL Model
+		Performance Metrics
+		Lighthouse
+		DevTools
+18. Server Side Rendering (SSR) [Không bắt buộc]
+	React.js [Khuyến khích]
+		Next.js [Khuyến khích]
+		After.js [Không khuyến khích]
+	Angular [Lựa chọn khác]
+		Universal [Lựa chọn khác]
+	Vue.js [Lựa chọn khác]
+		Nuxt.js	[Lựa chọn khác]	
+19. GraphQL [Không bắt buộc]
+	Apollo [Khuyến khích]
+	Relay Modern [Lựa chọn khác]
+20. Static Site Generators [Không bắt buộc]
+	Next.js [Khuyến khích]
+	GatsbyJS [Khuyến khích]
+	Nuxt.js [Lựa chọn khác]
+	Vuepress [Lựa chọn khác]
+	Jelyll [Lựa chọn khác]
+	Hugo [Lựa chọn khác]
+21. Ứng dụng Mobile [Không bắt buộc]
+	React Native [Khuyến khích]
+	NativeScript
+	Flutter
+	Ionic
+21. Ứng dụng Desktop [Không bắt buộc]
+	Electron [Khuyến khích]
+	Carlon [Không khuyến khích]
+	Proton Native [Không khuyến khích]
+22. Web Assembly [Không bắt buộc]
+	Web Assembly hay WASM là một hệ binary instructions tạo ra từ các ngôn ngữ lập trình bậc cao như Go, C, C++, hay Rust. WASM nhanh hơn JavaScript và WASM 1.0 đã được sử dụng trong các trình duyệt phổ biến. W3C chính thức công nhận WASM vào cuối năm 2019.
+23. Học, học nữa, học mãi...
