@@ -173,7 +173,7 @@ module.exports = withSass();
         cách như sau:
     </p>
 
-    <pre><code class="language-javascript">const MyImage = () => (
+    <pre><code class="language-javascript">const MyImage = () =&gt; (
         &lt;img src="/statis/images/my-image.png" /&gt;
     );
     </code></pre>
@@ -261,11 +261,11 @@ export default HelloUA;
     <pre><code class="language-javascript">import React, { Component } from 'react';
 import axios from 'axios';
 
-const HelloUA = ({ data }) => (
+const HelloUA = ({ data }) =&gt; (
     &lt;div&gt;Number of post: {this.data.length}&lt;/div&gt;
 );
 
-HelloUA.getInitialProps = async ({ req }) => {
+HelloUA.getInitialProps = async ({ req }) =&gt; {
     const response = await axios.get('http://localhost:8000/api/v0/posts');
     const data = response.data;
 
@@ -325,24 +325,24 @@ const handle = app.getRequestHandler();
 const server = express();
 
 app.prepare()
-    .then(() => {
+    .then(() =&gt; {
 
         // Slug on url
-        server.get('/post/:postId', (req, res) => {
+        server.get('/post/:postId', (req, res) =&gt; {
             console.log(req.params.postId);
             return app.render(req, res, '/post', { postId: req.params.postId })
         });
 
-        server.get('*', (req, res) => {
+        server.get('*', (req, res) =&gt; {
             return handle(req, res);
         });
 
-        server.listen(3000, err => {
+        server.listen(3000, err =&gt; {
             if (err) console.log(err)
             console.log('> Ready on port 3000');
         })
     })
-    .catch(err => {
+    .catch(err =&gt; {
         console.log(err);
         process.exit();
     });
@@ -365,7 +365,7 @@ import axios from 'axios'
 
 import '../../static/scss/style.scss';
 
-const PostPage = (props) => (
+const PostPage = (props) =&gt; (
     &lt;div&gt;
         &lt;p&gt;{props.data.title}&lt;/p&gt;
         &lt;Link href="/"&gt;
@@ -374,7 +374,7 @@ const PostPage = (props) => (
     &lt;/div&gt;
 );
 
-PostPage.getInitialProps = async ({ query }) => {
+PostPage.getInitialProps = async ({ query }) =&gt; {
     const postId = query.postId
     const res = await axios.get(`http://localhost:8000/api/v0/posts/${postId}`);
 
@@ -479,7 +479,7 @@ export default Home;
 import Router from 'next/router';
         
 class Home extends React.Component {
-    changeRouter = () => {
+    changeRouter = () =&gt; {
         Router.push({
             pathname: '/post',
             query: { postId: 1 },
