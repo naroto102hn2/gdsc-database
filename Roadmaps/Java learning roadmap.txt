@@ -1,0 +1,55 @@
+1. Học Kiến thức Cơ bản
+	Cú pháp cơ bản
+	Kiểu Dữ liệu, Biến
+	Điều kiện
+	Hàm
+	Vòng lặp
+	Xử lí Ngoại lệ
+	Cấu trúc Dữ liệu
+	Lập trình Hướng Đối tượng, Giao diện, Lớp
+	Gói Phần mềm
+	Làm việc với Tập tin và Giao diện Lập trình Ứng dụng
+2. Học Sâu hơn
+	Quản lí Bộ nhớ
+	Collections Framework
+	Serialization
+	Networking và Sockets
+	Generics
+	Cách Hoạt động của Máy ảo Java
+	Thu gom Rác
+	Kiến thức Cơ bản về Threads
+	Streams
+3. Các Công cụ Build
+	Gradle
+	Maven
+	Ant
+4. Web Frameworks
+	Spring
+	Spring Boot
+	Play Framework
+	Spark
+5. Object-Relational Mapping
+	Java Persistence API
+	Spring Data JPA
+	Hibernate
+	EBean
+6. Logging Frameworks
+	Logback
+	Log4j2
+	TinyLog
+7. Java database connectivity
+	JDBI3
+	JDBC Template
+8. Kiểm thử Ứng dụng của bạn
+	Mocking
+		Mockito
+	Kiểm thử Hành vi
+		Cucumber-JVM
+		Cukes
+		JBehave
+	Kiểm thử Đơn vị
+		JUnit
+		TestNG
+	Kiểm thử Tích hợp
+		REST Assured
+		JMeter

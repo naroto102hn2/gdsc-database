@@ -1,0 +1,130 @@
+<div class="post-body">
+    <figure>
+        <img
+                src="https://i.postimg.cc/Tw4CvSmN/2338-EC4-B-5-D13-440-F-8-A74-D0032664-FA1-B.png"
+                alt="Promise in JavaScript"
+        />
+        <figcaption>Promise in JavaScript</figcaption>
+    </figure>
+    <h1 id="gioi-thieu">Giới thiệu</h1>
+    <p>Promise là một kĩ thuật gắn mật thiết với cơ chế bất đồng bộ (asynchronous) - một khía cạnh “khoai” và khá phức tạp trong Javascript làm hoang mang rất nhiều Developers. Cụ thể Promise là gì? Khả năng của nó là gì? Hãy cùng tìm hiểu qua bài viết này!</p>
+    <h1 id="asynchronous">Asynchronous</h1>
+    <p>Trước khi tìm hiểu về Promise, hãy nhắc lại một chút về Asynchronous. Hiểu một cách cơ bản và chung nhất thì Asynchronous là cơ chế mà code sẽ được xử lý không theo thứ tự, nó ngược lại với Synchronous ( đồng bộ) - chương trình sẽ chạy xong hoàn toàn bước 1 rồi đến bước 2, xong hoàn toàn bước 2 rồi đến bước 3 v.v… Một trong những lợi ích của Asynchronous chính là để tối ưu trải nghiệm người dùng khi truy cập vào những trang web chứa tài nguyên nặng, ví dụ để load những tài nguyên này (ảnh, video,…) cần một khoảng thời gian đáng kể và nếu không có Asynchronous người dùng sẽ phải chờ lệnh điều khiển việc tải kia hoàn thành xong để các lệnh phía sau bắt đầu thực hiện, việc web “đứng” ,“lag” chắc chắn không phải trải nghiệm dễ chịu đúng không nào!</p>
+    <p><em>P/s: Hãy tìm thêm những bài viết của GDSC để hiểu rõ hơn về Asynchronous nhé.</em></p>
+    <p>Việc load ảnh trong ví dụ nói trên được gọi là một hành động bất đồng bộ. Thực tế mọi hành động bất đồng bộ có thể thành công hoặc thất bại, Promise sinh ra để xử lý kết quả của những hành động này.</p>
+    <h1 id="promise">Promise</h1>
+    <p>Định nghĩa: <em><strong>Promise</strong></em> là một đối tượng được sử dụng cho tính toán bất đồng bộ. Một promise đại diện cho một tiến trình hay một tác vụ chưa thể hoàn thành ngay được. Trong tương lai, promise sẽ trả về giá trị hoặc là đã được giải quyết (resolve) hoặc là không (reject).</p>
+    <p>Promise có 3 trạng thái sau đây</p>
+    <ul>
+    <li><em><strong>pending</strong></em>: trạng thái ban đầu, chưa thành công (fullfilled) hay từ chối (rejected).</li>
+    <li><em><strong>fullfilled</strong></em>: tiến trình hoàn toàn thành công</li>
+    <li><em><strong>rejected</strong></em>: tiến trình thất bại</li>
+    </ul>
+    <p>**Lưu ý: Promise được coi là settled (ổn định) nếu nó fullfilled hoặc rejected.</p>
+    <p>Thoạt nhìn thì định nghĩa trông có vẻ khó hiểu, để bạn đọc dễ hình dung, hãy “hình tượng hóa” nó lên một chút =))).</p>
+    <p>Promise dịch ra có nghĩa là <em><em><strong>lời hứa hẹn</strong></em></em>. Thử tưởng tượng bạn quyết định tỏ tình với crush, crush trả lời bạn: <strong><em>“Hãy cho em thời gian”</em></strong> thì đây chính là một lời hứa hẹn, một Promise với hành động tỏ tình.</p>
+    <p>Lời hứa này cũng có 3 trạng thái:</p>
+    <ul>
+    <li><em><strong>pending</strong></em>: chưa trả lời, tiếp tục chờ 😐</li>
+    <li><em><strong>fullfilled</strong></em>: tỏ tình thành công ❤️</li>
+    <li><em><strong>rejected</strong></em>: tỏ tình thất bại 💔</li>
+    </ul>
+    <p><strong><em>Optional:</em></strong><br>
+    <em>Tỏ tình là hành động bất đồng bộ vì trong thời gian chờ crush trả lời (pending) những hoạt động như ăn, ngủ, học tập, làm việc,… vẫn tiến hành ngay cả khi chưa có đáp án ( từ chối hoặc đồng ý).</em></p>
+    <h1 id="su-dung-promise-trong-javascript">Sử dụng Promise trong Javascript</h1>
+    <p>Để tạo Promise một cách thủ công, ta sử dụng cú pháp:</p>
+    <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">const</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">result</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token comment">//succesful promise condition) {</span>
+            <span class="token function">resolve</span><span class="token punctuation">(</span>fullfilled value<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token function">reject</span><span class="token punctuation">(</span>rejected value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>	
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    </code></pre>
+    <p>Nếu đã biết về OOP trong Javascript, bạn sẽ nhận thấy một Promise thực chất là một instance của constructor function <code>Promise()</code>. Hàm <code>result()</code> được truyền vào có 2 parameters là <code>resolve</code> và <code>reject</code> (cũng là 2 function) lần lượt trả về giá trị thành công (fullfilled value) hay thất bại (rejected value) tùy thuộc vào trạng thái của <code>promise</code>.</p>
+    <p>Để rõ hơn, hãy minh họa ví dụ tỏ tình crush bên trên của chúng ta =)).</p>
+    <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">const</span> thanhCong <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> toTinh <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span>reject<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>thanhCong<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'Em dong y la nguoi iu cua anh'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'Em chi coi anh la anh trai'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    
+    </code></pre>
+    <p>Ở đây, function result được viết bởi arrow function (là một cách khá phổ biến) và biến <code>thanhCong</code> đã bỏ qua sự thật phũ phàng và đặt mặc địch là <code>true</code> =)). Do đó promise  <code>toTinh</code> sẽ có trạng thái là fullfilled.</p>
+    <p>Ngoài ra còn những cách tạo ra promise với trạng thái được đặt ra ngay lập tức mà không cần qua một điều kiện nào cả.</p>
+    <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">const</span> toTinhThanhCong <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'Em dong y la nguoi iu cua anh'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> toTinhThatBai <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'Em chi coi anh la anh trai'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    </code></pre>
+    <p>Ngay khi khai báo, <code>toTinhThanhCong</code> sẽ có trạng thái fullfilled và <code>toTinhThatBai</code> sẽ có trạng thái rejected.</p>
+    <p>Như vậy sau khi khai báo và promise có một trạng thái nhất định, làm thế nào để sử dụng promise, hãy cùng đến với phần tiếp theo.</p>
+    <h1 id="chaining-promise">Chaining Promise</h1>
+    <p>Các methods <code>promise.then()</code>, <code>promise.catch()</code> và <code>promise.finally()</code> được dùng để thực hiện những lệnh cụ thể với một settled promise.</p>
+    <h2 id="then"><code>then()</code></h2>
+    <p><code>then()</code> method nhận hai argument là 2 callback function: một cho trường hợp trạng thái thành công (fullfilled) và một cho trạng thái thất bại (rejected). Mỗi callback function này lại nhận một argument là giá trị bên trong hàm <code>resolve()</code> hoặc <code>reject()</code> khi khai báo promise</p>
+    <p>Mỗi khi <code>then()</code> được thực hiện lại return một promise khác, đây chính là cơ sở cho chaining promise.</p>
+    <pre class=" language-javascript"><code class="prism  language-javascript"><span class="token keyword">const</span> thanhCong <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> toTinh <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span>reject<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>thanhCong<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'Em dong y la nguoi iu cua anh'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'Em chi coi anh la anh trai'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    toTinh<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">,</span>response <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    </code></pre>
+    <p>Như đã nói ở trên, promise này ở trạng thái fullfilled, kết quả sẽ in ra:</p>
+    <p><figure><img src="https://i.postimg.cc/y8FWzHmW/1.png" alt="toTinhThanhCong"></figure></p>
+    <p>Ngược lại, ở dòng đầu tiên nếu ta đổi thành thành <code>const thanhCong = false;</code> thì kết quả in ra là:</p>
+    <p><figure><img src="https://i.postimg.cc/SNmmzMCQ/2.png" alt="toTinhThatBai"></figure></p>
+    <p>Do mỗi <code>then()</code> method return một promise nên ta có thể chaining như sau:</p>
+    <pre class=" language-javascript"><code class="prism  language-javascript">toTinh
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> response <span class="token operator">+</span> <span class="token string">', em se di choi voi anh'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> response <span class="token operator">+</span> <span class="token string">' va em da mo ve ngoi nha va nhung dua tre'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    </code></pre>
+    <p>Kết quả in ra:</p>
+    <p><figure><img src="https://i.postimg.cc/fyw1kYF6/3.png" alt="thanhCongRatNhieu"></figure></p>
+    <h2 id="catch"><code>catch()</code></h2>
+    <p>Processing continues to the next link of the chain even when a <code>.then()</code> lacks a callback function that returns a Promise object. Therefore, a chain can safely omit every <em>rejection</em> callback function until the final <code>.catch()</code>.</p>
+    <p>Có một lưu ý là <code>then()</code> method chaining chỉ xảy ra liên tuc và bình thường nếu không có bất kì promise nào trong chaining methods bị từ chối (rejected), được coi là một lỗi (Error). Nếu điều này xảy ra, <code>catch()</code> có tác dụng để “bắt lấy” lỗi này.</p>
+    <pre class=" language-javascript"><code class="prism  language-javascript">toTinh
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> response <span class="token operator">+</span> <span class="token string">', em se di choi voi anh'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'Xin loi em, anh phai lam do an'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> response <span class="token operator">+</span> <span class="token string">' va em da mo ve ngoi nha va nhung dua tre'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    </code></pre>
+    <p>Kết quả:</p>
+    <p><figure><img src="https://i.postimg.cc/0NRWbpKc/4.png" alt="failMotChut"></figure></p>
+    <p>Method <code>catch()</code> ngay lập tức được gọi khi method <code>then()</code> thứ hai trả về một rejected promise, bỏ qua cả 2 method then() tiếp theo.</p>
+    <h3 id="finally"><code>finally()</code></h3>
+    <p>Method cuối cùng là <code>finally()</code>…y như cái tên của nó :v ; sẽ được thực hiện cho dù promise trước đó trong method chaining rejected hay là fullfilled.<br>
+    Xét 2 đoạn code dưới đây:</p>
+    <pre class=" language-javascript"><code class="prism  language-javascript">toTinh
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> response <span class="token operator">+</span> <span class="token string">', em se di choi voi anh'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'Xin loi em, anh phai lam do an'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token keyword">finally</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Khong sao, em van iu anh =))'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    </code></pre>
+    <pre class=" language-javascript"><code class="prism  language-javascript">toTinh
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> response <span class="token operator">+</span> <span class="token string">', em se di choi voi anh'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> response <span class="token operator">+</span> <span class="token string">' va em da mo ve ngoi nha va nhung dua tre'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token keyword">finally</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Khong sao, em van iu anh =))'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    </code></pre>
+    <p>Cả hai trường hợp đều sẽ in ra:</p>
+    <p><figure><img src="https://i.postimg.cc/qq3jGLYt/5.png" alt="dauLaiVaoDay"></figure></p>
+    <h1 id="tam-ket">Tạm kết</h1>
+    <p>Hi vọng qua bài viết trên, các bạn sẽ nắm được phần nào Promise trong Javascript để gây ấn tượng trong mắt các nhà tuyển dụng. Thực tế, đây mới chỉ là cái nhìn sơ lược về Promise và còn rất nhiều điều để tìm hiểu về nó, xin gặp lại các bạn ở các bài viết tiếp theo!</p>
+    
+    
+</div>
