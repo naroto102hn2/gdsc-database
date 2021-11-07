@@ -1,0 +1,511 @@
+<div class="post-body">
+    <figure>
+        <img
+                src="https://i.postimg.cc/prpZCJRr/nextjs-thumbnail.jpg"
+                alt="NextJS"
+        />
+        <figcaption>NextJS</figcaption>
+    </figure>
+
+    <h1 id="mo-dau">Mở đầu</h1>
+
+    <p>
+        Sau một thời gian làm việc với <code>ReactJS</code> và 
+        <strong>Client Side Rendering (CSR)</strong> thì gần đây, mình 
+        đang tìm hiểu về việc thực hiện <strong>Server Side Rendering (SSR)</strong>
+        với <code>ReactJS</code> cụ thể là <code>NextJS</code> - một framework 
+        cho chúng ta thực hiện <strong>SSR</strong> với <code>ReactJS</code>.
+        Khi viết bài này mình cũng đang trong quá trình mới tìm hiểu về
+        <code>NextJS</code> nên bài này sẽ không hề chứa các lời khuyên hay 
+        đứa ra các cách làm tốt nhất mà đơn giản chỉ là chia sẻ lại cho các 
+        bạn những gì mình tìm hiểu được và mong rằng sẽ tiết kiệm cho các bạn 
+        một chút thời gian khi chuyển từ <strong>CSR</strong> sang <strong>SSR</strong>
+        với <code>NextJS</code>. Trước khi các bạn tiếp tục đọc bài này và cũng là 
+        để dễ dàng hơn cho bạn thì các bạn nên:
+    </p>
+
+    <ul>
+        <li>
+            <p>
+                Hiểu biết cơ bản về <strong>Client Side Rendering</strong> 
+                và <strong>Server Side Rendering</strong>
+            </p>
+        </li>
+        <li>
+            <p>
+                Có kiến thức cơ bản về <code>ReactJS</code>
+            </p>
+        </li>
+    </ul>
+
+    <h1 id="nextjs">NextJS</h1>
+
+    <p>
+        Ngay khi vào trang chủ của <a target="_blank" href="https://nextjs.org/">NextJS</a> thì 
+        ngay lập tức ta biết được ngay nó là gì cũng như ứng dụng của nó:
+    </p>
+
+    <p>
+        Về cơ bản thì với việc <strong>SSR</strong> thì <code>NextJS</code> 
+        giới thiệu là sẽ cung cấp cho chúng ta một số thứ như:
+    </p>
+
+    <ul>
+        <li>
+            <p>
+                Hiệu năng tốt hơn so với ứng dụng <strong>CSR</strong>
+            </p>
+        </li>
+        <li>
+            <p>
+                Mang lại khả năng SEO tốt hơn mà <strong>CSR</strong>
+                không có như là việc chia sẻ bài viết.
+            </p>
+        </li>
+    </ul>
+
+    <p>
+        Trên trang chủ thì bạn cũng có thể tìm thấy rất nhiều các website đang 
+        sử dụng <code>NextJS</code> để xây dựng sản phẩm của mình trên mọi lĩnh 
+        vực như tài chính, tin tức, thuwong mại điện tử, ... . Giới thiệu qua 
+        cho các bạn như vậy còn bây giờ chúng ta sẽ đi vào những gì mình đã tìm 
+        hiểu được.
+    </p>
+
+    <h2 id="khoi-tao-ung-dung-nextjs">Khởi tạo ứng dụng NextJS</h2>
+
+    <p>
+        Tương tự với <strong>creat-react-app</strong> của <code>ReactJS</code>
+        thì với <code>NextJS</code> ta cũng có công cụ tương tự là
+        <strong>create-next-app</strong>. Bạn có thể cài đăt và xem hướng dẫn cài 
+        đặt chi tiết ở <a target="_blank" href="https://github.com/vercel/create-next-app">đây</a>. 
+        Sau khi cài việc cài đặt thành công ta có thể khởi tạo một ứng dụng <code>NextJS</code> 
+        mới với lệnh:
+    </p>
+
+    <pre><code>
+        $ create-react-app learn-nextjs
+    </code></pre>
+
+    <p>
+        Sau khi tạo ta sẽ có được cây thư mục như sau:
+    </p>
+
+    <figure>
+        <img 
+            src="https://i.postimg.cc/SsB6DHrP/nextjs-folder.png" 
+            alt="Folder"
+        />
+        <figcaption>Cây thư mục sau khi khởi tạo NextJS</figcaption>
+    </figure>
+
+    <p>
+        Với cây thư mục này thì ta cần quan tầm đến một số thứ như:
+    </p>
+
+    <ul>
+        <li>
+            <p>
+                <code>components</code>: như cái tên thì nó sẽ là nơi 
+                chức các component cho ứng dụng của chúng ta.
+            </p>
+        </li>
+        <li>
+            <p>
+                <code>pages</code>: đây là nơi chứa các trang mà chúng 
+                ta truy cập từ url vào, cụ thể mình sẽ nói đến ở dưới.
+            </p>
+        </li>
+        <li>
+            <p>
+                <code>static</code>: là thư mục chứa các file static của 
+                chúng ta như ảnh, css, ...
+            </p>
+        </li>
+        <li>
+            <p>
+                <code>next.config.js</code>: cũng như cái tên thì nó là fie 
+                chứa config cho ứng dụng của chúng ta.
+            </p>
+        </li>
+    </ul>
+
+    <h2 id="su-dung-scss">Sử dụng SCSS</h2>
+
+    <p>
+        <code>ReactJS</code> hay <code>NextJS</code> thì đều là để nhắm đến 
+        phần UI cho nên với mình việc làm sao để có thể style cho các component 
+        trong ứng dụng của chúng ta là một trong những thứ đầu tiên mình quan 
+        tâm. Thông thường với ứng dụng <code>ReactJS</code> thì mình sẽ sử dụng
+        <code>SCSS</code> và việc này cũng đã được <strong>create-react-app</strong>
+        hỗ trợ sẵn. Tuy nhiên với <code>NextJS</code> để sử dụng được <code>SCSS</code>
+        thì ta phải cài thêm một package là <code>@zeit/next-sass</code>
+        như sau:
+    </p>
+
+    <pre><code>
+        yarn add @zeit/next-sass node-sass
+    </code></pre>
+
+    <p>
+        Trong file <code>next.config.js </code> thêm nội dung sau:
+    </p>
+
+    <pre><code class="language-javascript">const withSass = require('@zeit/next-sass');
+module.exports = withSass();
+    </code></pre>
+
+    <p>
+        Có một lưu ý là bạn bắt buộc phải import ít nhất một file <code>.scss</code>
+        vào các file trong folder <code>/pages</code> nếu không bạn sẽ gặp phải một bug 
+        khá kì lạ đó là khi bạn vào trang không được import file <code>.scss</code>
+        đầu tiên khi truy cập ứng dụng thì sẽ không bấm chuyển trang được. Bug này đã 
+        được cộng đồng phát hiện và mong rằng sẽ sớm được fix trong thời gian tới.
+    </p>
+
+    <h2 id="su-dung-cac-file-static">Sử dụng các file static</h2>
+
+    <p>
+        Một điều quan trọng nữa đối với UI là ta sẽ cần phải chèn ảnh vào trang của chúng ta. 
+        Như ở trên mình đã nói là chúng ta có một folder là <code>/statics</code>.
+        Đối với ảnh thì bên trong ta nên tạo thêm một folder là <code>/images</code>
+        và lưu ảnh vào đó. Lúc này ở trong bất cứ component nào ta có thể sử dụng ảnh đó bằng 
+        cách như sau:
+    </p>
+
+    <pre><code class="language-javascript">const MyImage = () => (
+        &lt;img src="/statis/images/my-image.png" /&gt;
+    );
+    </code></pre>
+
+    <h2 id="su-dung-next/head">Sử dụng next/head</h2>
+
+    <p>
+        Để hỗ trợ cho việc SEO cũng như chia sẻ thì <code>NextJS</code>
+        cung cấp cho chúng ta một component là <code>next/head</code>.
+        Cách sử dụng như sau:
+    </p>
+
+    <pre><code class="language-javascript">import Head from 'next/head';
+
+function IndexPage() {
+    return (
+    &lt;div&gt;
+        &lt;Head&gt;
+        &lt;title&gt;My page title&lt;/title&gt;
+        &lt;meta name="viewport" content="initial-scale=1.0, width=device-width" /&gt;
+        &lt;/Head&gt;
+        &lt;p&gt;Hello world!&lt;/p&gt;
+    &lt;/div&gt;
+    );
+}
+
+export default IndexPage;
+    </code></pre>
+
+    <p>
+        Về cơ bản nội dung mà chúng ta khai báo trong phần <code>&lt;Head&gt;</code>
+        này sẽ được thêm vào phần <code>&lt;head&gt;</code> trang html mà chúng ta trả 
+        về cho user. Điều này đồng nghĩa với tùy trang ta có thể truyền thêm 
+        các thông tin như <code>title</code>, <code>meta</code>, <code>og:image</code>,
+        <code>og:title</code>, ... để có thể share lên các trang khác như facebook.
+    </p>
+
+    <h2 id="fetch-du-lieu-tu-server">Fetch dữ liệu từ server</h2>
+
+    <p>
+        Để có được các thông tin về trang để điền vào phần <code>&lt;Head&gt;</code> ở trên thì ta sẽ cần 
+        thêm thông tin từ phía server. Ví dụ trong trường hợp bạn copy link một bài viết 
+        của mình và paste vào comment trên facebook và nhận được kết quả như sau:
+    </p>
+
+    <p>
+        Thì tất nhiên phần <code>&lt;Head&gt;</code> của trang chúng ta sẽ cần điền tối thiểu các phần 
+        thông tin như <code>og:image</code> và <code>og:title</code> mà các thông tin này sẽ có 
+        được bằng cách ta lấy dữ liệu từ server. <code>NextJS</code> cung cấp cho chúng ta thêm 
+        một hàm có tên là <code>getInitialProps()</code> có chức năng có thể hiểu là giống như
+        <code>componentDidMount()</code> nhưng hoạt động được với <strong>SSR</strong>
+        và có là thay thế được cho <code>componentDidMount()</code> với ứng dụng SSR. Cụ thể như sau:
+    </p>
+
+    <pre><code class="language-javascript">import React, { Component } from 'react';
+import axios from 'axios';
+
+class HelloUA extends Component {
+    
+    static async getInitialProps({ req }) {
+        const response = await axios.get('http://localhost:8000/api/v0/posts');
+        const data = response.data;
+
+        return {
+            data
+        };
+        }
+
+        render() {
+        return &lt;div&gt;Number of post: {this.data.length}&lt;/div&gt;
+        }
+}
+
+export default HelloUA;
+    </code></pre>
+
+    <p>
+        Hàm này bắt buộc phải return nội dung là một <strong>Object</strong> 
+        thông thường chứ không được thuộc dạng <strong>Date</strong>, <strong>Map</strong>, 
+        hay <strong>Set</strong>. Hàm này sẽ được gọi lại nếu được chuyển hướng tới URL 
+        khác thông qua <code>next/link</code> (sẽ nói đến ở mục sau). Đồng thời ta cũng 
+        có thể sử dụng hàm <code>getInitialProps()</code> trong stateless component như sau:
+    </p>
+
+    <pre><code class="language-javascript">import React, { Component } from 'react';
+import axios from 'axios';
+
+const HelloUA = ({ data }) => (
+    &lt;div&gt;Number of post: {this.data.length}&lt;/div&gt;
+);
+
+HelloUA.getInitialProps = async ({ req }) => {
+    const response = await axios.get('http://localhost:8000/api/v0/posts');
+    const data = response.data;
+
+    return {
+        data
+    };
+}
+    </code></pre>
+
+    <p>
+        <em>
+            Lưu ý: hàm <code>getInitialProps()</code> chỉ hoạt động trong <code>/pages</code>.
+            Đồng thời hàm này cũng nhận vào một tham số là một request object chứa các thông 
+            tin như queryParameter, ... .
+        </em>
+    </p>
+
+    <h2 id="routing">Routing</h2>
+
+    <p>
+        <code>NextJS</code> sẽ tự động tạo thành các <code>router</code> 
+        đối với các file mà bạn tạo trong folder <code>/pages</code>, ví dụ:
+    </p>
+
+    <ul>
+        <li>
+            <p>
+                <code>pages/index.js</code> sẽ ứng với url gốc là 
+                <code>/</code>
+            </p>
+        </li>
+        <li>
+            <p>
+                <code>pages/post/index.js</code> sẽ ứng với url gốc là: 
+                <code>/post</code>
+            </p>
+        </li>
+        <li>
+            <p>
+                <code>pages/post/create.js</code> sẽ ứng với url gốc là: 
+                <code>/post/create</code>
+            </p>
+        </li>
+    </ul>
+
+    <p>
+        Tuy nhiên với trường hợp bạn muốn url của bạn có dạng <code>/post/:postId</code>
+        thì lúc này ta sẽ cần dùng đến 1 file đóng vai trò là server như sau:
+    </p>
+
+    <pre><code class="language-javascript">const express = require('express');
+const next = require('next');
+
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({ dev });
+const handle = app.getRequestHandler();
+const server = express();
+
+app.prepare()
+    .then(() => {
+
+        // Slug on url
+        server.get('/post/:postId', (req, res) => {
+            console.log(req.params.postId);
+            return app.render(req, res, '/post', { postId: req.params.postId })
+        });
+
+        server.get('*', (req, res) => {
+            return handle(req, res);
+        });
+
+        server.listen(3000, err => {
+            if (err) console.log(err)
+            console.log('> Ready on port 3000');
+        })
+    })
+    .catch(err => {
+        console.log(err);
+        process.exit();
+    });
+    </code></pre>
+
+    <p>
+        Về cơ bản đây là file <code>server.js</code> có vai trò hỗ trợ việc 
+        <strong>SSR</strong>. Vì phần <code>postId</code> kìa là tham số động
+        và ta không có cách nào để tạo ra url động dưới dạng đó theo quy tắc 
+        sinh url theo page của <code>NextJS</code>. Với cách viết trên thì cái 
+        url có dạng <code>/post/:postId</code> sẽ được bên client hiểu là 
+        <code>/post?postId=?</code> nhưng với cơ chế rewrite url nên nó sẽ là
+        <code>/post/:postId</code> và trong component của chúng ta có thể lấy được 
+        <code>postId</code> này như một query param như sau:
+    </p>
+
+    <pre><code class="language-javascript">import React from 'react';
+import Link from 'next/link';
+import axios from 'axios'
+
+import '../../static/scss/style.scss';
+
+const PostPage = (props) => (
+    &lt;div&gt;
+        &lt;p&gt;{props.data.title}&lt;/p&gt;
+        &lt;Link href="/"&gt;
+            &lt;a&gt;Back&lt;/a&gt;
+        &lt;/Link&gt;
+    &lt;/div&gt;
+);
+
+PostPage.getInitialProps = async ({ query }) => {
+    const postId = query.postId
+    const res = await axios.get(`http://localhost:8000/api/v0/posts/${postId}`);
+
+    return { data: res.data };
+};
+
+export default PostPage;
+    </code></pre>
+
+    <p>
+        Với đoạn code trên khi lần đầu ta truy cập vào trang với url <code>/post/1</code> 
+        thì trong component của chúng ta sẽ lấy được số 1 giống ứng với <code>postId</code> 
+        và sử dụng nó để gọi API và lấy về post có id là 1 sau đó render ra giao diện tương 
+        ứng trên server và trả về file nội dung html đầy đủ cho chúng ta. Tuy nhiên đó là 
+        cách mà ta khai báo router với SSR còn với Client thì chúng ta sẽ sử dụng thẻ 
+        <code>next/link</code> để thực hiện việc điều hướng.
+    </p>
+
+    <h2 id="link">Link</h2>
+
+    <p>
+        <code>NextJS</code> cung cấp sẵn cho chúng ta một component là <code>next/link</code> 
+        giống như component <code>&lt;Link/&gt;</code> trong <code>react-route</code>. 
+        Tuy nhiên khi sử dụng cú pháp sẽ như sau: 
+    </p>
+
+    <pre><code class="language-javascript">// pages/index.js
+import NextLink from 'next/link';
+
+function Home() {
+    return (
+    &lt;div&gt;
+        &lt;NextLink href="/about"&gt;
+        &lt;a&gt;Back to home&lt;/a&gt;
+        &lt;/NextLink&gt;
+    &lt;/div&gt;
+    );
+}
+
+export default Home;
+    </code></pre>
+
+    <p>
+        Như bạn có thể thấy component <code>&lt;NextLink/&lt;</code> sẽ bắt buộc phải có một 
+        thuộc tính là <strong>href</strong> để trỏ đến đường dẫn cần thiết và đặc 
+        biệt bên trong nó phải chứa một cặp thẻ bất kì như <code>&lt;a&gt;&lt;/a&gt;</code>, 
+        <code>&lt;button&gt;&lt;/button&gt;</code>, <code>&lt;div&gt;&lt;/div&gt;</code> ... 
+        giống như trong ví dụ trên. Ngoài ra <code>next/link</code> còn nhận vào một tham số 
+        nữa là <strong>as</strong> đóng vai trò như việc rewrite url. Ở phần nội dung trước 
+        <strong>Routing</strong> chúng ta đã nói về việc sử dụng url có dạng <code>/post/:postId</code> 
+        ở phía <strong>SSR</strong> còn ở phía client ta sẽ phải dùng <code>next/link</code> 
+        như sau:
+    </p>
+
+    <pre><code class="language-javascript">// pages/index.js
+import NextLink from 'next/link';
+
+function Home() {
+    return (
+    &lt;div&gt;
+        &lt;NextLink href="/post?postId=1" as="/post/1"&gt;
+        &lt;a&gt;To post detail&lt;/a&gt;
+        &lt;/NextLink&gt;
+    &lt;/div&gt;
+    );
+}
+
+export default Home;
+    </code></pre>
+
+    <p>
+        Như phần trước đã nói <code>postId</code> sẽ được coi như 1 query param trong
+        <strong>NextJS</strong> cho nên ta phải viết dưới dạng <code>/post?postId=1</code> 
+        sau đó sử dụng thuộc tính thử 2 của <code>next/link</code> là <strong>as</strong> 
+        để truyển nó về dạng ta mong muốn là <code>/post/1</code> vì ở client sẽ không cho 
+        phép bạn viết sẵn kiểu <code>href="/post/:postId"</code>
+    </p>
+
+    <p>
+        <em>
+            Lưu ý: nếu ta đang từ ở 1 trang khác ví dụ như trang <code>/</code> và bấm chuyển 
+            trang với <code>nex/link </code> với <code>href="/post?postId=1"</code> thì mọi 
+            việc sẽ diễn ra như bình thường và ta có thế lấy cái <code>postId</code> đó như 
+            query param bên component <code>&lt;Post/&gt;</code> tuy nhiên nếu ta reload lại 
+            trang <code>/post/1</code> thì sẽ dẫn tới 404 vì mặc định bên client sẽ không hiểu 
+            đường dẫn này mà nó chỉ hiểu <code>/post?postId=1</code> và rewrite lại thành 
+            <code>/post/1</code>. Đó là lý do vì sao ta cần file <code>server.js</code> để hỗ 
+            trợ các trường hợp như trên vì khi ta reload trang với url <code>/post/1</code> 
+            thì trên server có thể lấy được tham số 1 đó và truyền nó lại vào phần render app 
+            của chúng ta dưới dạng query param.
+        </em>
+    </p>
+
+    <p>
+        Ngoài cách sử dụng thẻ <code>next/link</code> ta cũng có thể dùng 
+        gán một function vào phần tử bất kì trong UI để tiến hành thay đổi 
+        url thông qua việc sử dụng <code>next/router</code>. Ví dụ với trường 
+        hợp url là <code>/posts/1</code> ta có thể viết như sau:
+    </p>
+
+    <pre><code class="language-javascript">import React from 'react';
+import Router from 'next/router';
+        
+class Home extends React.Component {
+    changeRouter = () => {
+        Router.push({
+            pathname: '/post',
+            query: { postId: 1 },
+            asPath: '/post/1'
+        });
+    }
+    
+    render() {
+        return (
+            &lt;div onClick={this.changeRouter}&gt;Click me!&lt;/div&gt;
+        )
+    }
+}
+        
+export default Home;
+    </code></pre>
+
+    <h1 id="ket-bai">Kết bài</h1>
+
+    <p>
+        Đến đây có lẽ các bạn đã có được khá nhiều thông tin về 
+        <strong>NextJS</strong> và cách cài đặt. Trong những phần tiếp 
+        theo, chúng mình sẽ tiếp tục chia sẻ thêm những thông tin hữu ích 
+        khác mà mình tích lũy được. Nếu các bạn thấy có điều gì chưa 
+        hợp lý hoặc có gì thắc mắc thì có thể comment ngay ở bên dưới nhé. 
+        Cảm ơn các bạn đã đọc bài.
+    </p>
+
+</div>
