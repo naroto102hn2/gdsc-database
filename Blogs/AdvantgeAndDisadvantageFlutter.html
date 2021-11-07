@@ -1,0 +1,138 @@
+<div class="post-body">
+    <h1 id="gioi-thieu">Giới thiệu</h1>
+
+    <p>
+        <strong>React Native</strong> đã ra đời khá lâu và trở thành nền tảng mạnh mẽ giúp phát triển phần mềm di động. Nhưng đến thời điểm này, <strong>Flutter</strong>, một cái tên mới sẽ hứa hẹn kỷ nguyên mới bắt đầu. Bài viết này sẽ có cái nhìn tổng quan về Flutter, , toàn bộ về ưu và khuyết điểm của nền tảng này.
+    </p>
+    <h1 id="defi">Flutter là gì</h1>
+    <p>
+         Flutter là nền tảng phát triển ứng dụng đa nền tảng cho iOS và Android do Google phát triển. Flutter sử dụng ngôn ngữ DART cũng do Google phát triển và flutter cũng đã được sử dụng để tạo ra các ứng dụng native cho Google.
+    </p>
+
+    <h2 id="Dart">Ngôn ngữ DART</h2>
+    <figure>
+    <img
+        src ="https://i.postimg.cc/50zvJ0CH/slide-13.jpg"
+        alt ="dart"
+    />
+    
+    </figure>
+
+    <p>
+        Ngôn ngữ DART là ngôn ngữ thuần hướng đối tượng được Google giới thiệu từ năm 2011, với mục đích cung cấp sự lựa chọn hiện đại hơn nhưng không thay thế Javascript. Tối ưu cho client, nhất là ứng dụng đa nền tảng.
+        Từng giữ vị trí Top 1 cho bình chọn ngôn ngữ không nên học năm 2018 theo Codementor:
+        <a href="https://www.codementor.io/blog/worst-languages-to-learn-3phycr98zk" taget = "_blank">https://www.codementor.io/blog/worst-languages-to-learn-3phycr98zk</a><br>
+Có thể nói mọi thứ đều có thể trở thành hiện tượng “vật đổi sao dời”, từ một ngôn ngữ không nên học vào 2018 có thể trở thành ngôn ngữ được sử dụng nhiều trong năm 2019 này, và nhờ Flutter mà có khả năng tiếp tục phát triển vào 2020.<br>
+Ngôn ngữ DART hiện nay được hỗ trợ khá tốt ở Visual Studio Code, và trong Android Studio.
+    </p>
+    <pre>
+    <code class="language-dart">
+    class Human{
+    String hobby;
+    Human(this.hobby);
+    bool isEating(){
+        return true;
+        }
+    }
+    void main(){
+    var  human = Human('doc sach');
+    print(human.hobby);
+    }
+    </code>
+    </pre>
+
+    <figure>
+    <img
+        src ="https://i.postimg.cc/tgnDDNYG/slide-0.jpg"
+        alt ="WHY FLUTTER"
+    />
+    
+    </figure>
+
+    <h3 id="usage">Flutter có thể làm được gì</h3>
+
+    <p>
+        <strong>Flutter: Ưu điểm</strong>
+        <ul>
+        <li> Mạnh về hiệu ứng, hiệu suất ứng dụng rất cao.</li>
+        <li>Giao tiếp gần như trực tiếp với hệ thống</li>
+        <li>Ngôn ngữ kiểu tĩnh nhưng với cú pháp hiện đại (tương tự JS, Python, Java), compiler linh động khi dùng AOT (cho sản phẩm cuối) và JIT (cho quá trình phát triển với hot reload)</li>
+        <li>Có thể chạy được giả lập mobile ngay trên web, tiện cho việc phát triển. Các bộ đo lường chỉ số hiệu suất được hỗ trợ sẵn giúp lập trình viên kiểm soát tốt hiệu suất của ứng dụng.<br>
+        – Có thể dùng để xây dựng các nền tảng gắn vào ứng dụng native để tăng hiệu suất.</li>
+        </ul>
+    </p>
+    <figure>
+    <img
+        src ="https://i.postimg.cc/QCgy2DFP/slide-5.jpg"
+        alt ="advan"
+    />
+    
+    </figure>
+
+    <p>
+        <strong>Flutter: Nhược điểm</strong>
+        <ul>
+        <li>Bộ render UI&nbsp;được nhóm phát triển gần như viết lại, không liên quan tới UI có sẵn của Framework native, dẫn đến memory sử dụng khá nhiều. Hơn nữa, các UI không đi chung với OS, mà được phát triển riêng, nghĩa là cùng 1 phiên bản Flutter khi tạo ra ứng dụng cho iOS thì iOS 8.x -&gt; 12.x đều y chang nhau, tương tự như với Android. Nhưng UI của Android thì tất nhiên khác với iOS.</li><li>Phải học thêm ngôn ngữ DART: lập trình viên biết về DART không nhiều, cũng có rủi ro là học xong DART sẽ dính liền luôn với DART ở mảng phát triển ứng dụng mobile. Chứ không uyển chuyển như JS hay Python có thể nhảy qua lại giữa front, back hay AI…</li>
+
+        <li>Mô hình dữ liệu mới: bloc pattern, DART Streaming; nếu đã quen với 
+        <a href="https://fullstackstation.com/ky-thuat-lap-trinh-time-traveling-la-gi/">Redux</a> 
+        khi làm phát triển React Native, bạn sẽ mất thời gian để học thêm mô hình dữ liệu trong Flutter, mặc dù nó không khó.</li>
+
+        <li>Là con cưng của Google, tuy nhiên hãng dính nhìu phốt với thói quen “quăng con giữa chợ” nên cũng cần cân nhắc. Tuy nhiên, mình nhận thấy Flutter rất tốt, tốt hơn nhiều so với những cái mà Google từng làm ra như Angular.</li>
+
+        </ul>
+    </p>
+
+    <p>
+        <strong>Native đúng nghĩa</strong><br>
+        Bộ engine để render UI hoàn toàn thuộc Flutter, vì vậy bạn có thể tạo ra bất kỳ hiệu ứng và đồ hoạ nào cho cả 2 nền tảng iOS và Android. Bạn có thể tưởng tượng Flutter như 1 engine game, có thể điểu chỉnh đến từng pixel và phủ trên đó là hệ thống Widget đa dạng, phong phú.
+    </p>
+
+    <p>
+        <strong>Dart DevTools<strong><br>
+        DevTools tuy mới ở giai đoạn beta nhưng độ hoàn thiện cũng rất cao, so với DevTools của React/React Native thì DevTools của Flutter tốt hơn.
+    </p>
+    <figure>
+    <img
+        src ="https://i.postimg.cc/vZV6NqLh/slide-6.jpg"
+        alt ="Hreload"
+    />
+    
+    </figure>
+
+    <p>
+        <strong>Hot Reload<strong><br>
+        Khi làm việc với những thứ liên quan đến UI thì Hot Reload thật khiến cho lập trình viên dễ chịu, càng tuyệt hơn khi Flutter cung cấp khả năng ghi nhớ state của ứng dụng. Hot Reload cung cấp cho bạn trải nghiệm tuyệt vời khi lập trình Flutter, so với React Native thì điểm này Flutter hơn.
+    </p>
+
+
+    <p>
+        <strong>Nâng cấp dễ dàng<strong><br>
+        Mặc dù cách cài đặt ban đầu của Flutter là tải về tập tin nén, nhưng khi cập nhật lên phiên bản mới thì chỉ cần dòng lệnh là đủ, và khá dễ dàng. Ứng dụng sau khi nâng cấp phiên bản Flutter chạy không gặp trở ngại gì cả. Đây là một điểm cộng khá lớn khi xét về độ trưởng thành. Khi sử dụng React Native, các phiên bản từ 0.25, 0.48 có những thay đổi phải sửa bằng tay mới chạy, rất khó chịu.
+    </p>
+
+
+
+
+
+
+    <h3 id="nonusage">Những điều chưa làm được của Flutter</h3>
+    <p>
+        <strong>Cập nhật lên kho ứng dụng không dễ dàng<strong><br>
+        Phải cập nhật ứng dụng thông qua trung tâm ứng dụng như Play Store hay App Store. Với React Native, nếu bạn chỉ chỉnh sửa phần sử dụng javascript thì bạn không cần phải build phiên bản mới để cập nhật ứng dụng. Điều này là không thể với Flutter vì Flutter build ra ứng dụng native, và code được biên dịch AOT.
+    </p>
+    <p>
+        <strong>Thiếu JSX<strong><br>
+        Gọi là thiếu thì cũng không chính xác, nhưng do quen với JSX khá thuận tiện của React Native. Mình thấy có khi JSX trực quan và dễ hiểu layout hơn của Flutter. Yêu cầu về JSX đã được gởi tới nhóm phát triển, họ không từ chối, tuy nhiên cũng không nên mong đợi điều này vì có lẽ nó không phù hợp lắm với DART.
+    </p>
+    <p>
+        <strong>Import chưa rõ ràng<strong><br>
+        Có chút khó khăn khi code, không biết 1 class, function được import từ package nào. Nếu sử dụng IDE hoặc VSCode thì có thể hover lên class để xác định, tuy nhiên đối với các Text Editor khác hoặc đọc bài viết thì khó xác định được class thuộc package nào.
+    </p>
+
+    <h4 id="all">Fullstack Station Tips</h4>
+    <p>
+        Vừa native vừa hot reload, cho trải nghiệm tốt cả giai đoạn phát triển và hiệu suất ứng dụng tốt. Đây quả là 1 điều tuyệt vời! Mình thật sự ấn tượng với Flutter.Tuy nhiên, ngôn ngữ Dart là một rào cản khá lớn, mình nghĩ phải cân nhắc rất kỹ cho định hướng nghề nghiệp. Nếu bạn muốn trở thành lập trình viên ứng dụng di động, hãy sử dụng Flutter từ hôm nay.
+    </p>
+
+    
